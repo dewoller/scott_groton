@@ -14,10 +14,29 @@ output:
 ```{r include=FALSE}
 
 source('lib/functions.R')
-
+library(purrrlyr )
+#install.packages('purrrlyr' )
 
 min_mandndi = 80
-read.spss('data/Groton Maze_v2.sav') %>%
+read.spss('data/Groton Maze_v2.sav') %>% 
+{ . } -> spss_orig
+
+attr(spss_orig, 'variable.labels') %>%
+  data.frame( stringsAsFactors=FALSE) %>% 
+  setNames('label') %>%
+  tibble::rownames_to_column(var = "variable")  %>%
+  as_tibble() %>%
+  mutate(variable=str_to_lower(variable)) %>%
+  { . } -> df_names
+
+df_names %>%
+  filter( str_detect( variable, '_t5$', )) %>%
+  mutate( variable = str_replace( variable, '_t5','')) %>%
+  mutate( variable = str_replace( variable, '^cog','cog_')) %>%
+  mutate( label = str_replace( label, ' - TIME 5','')) %>% 
+  { . } -> df_one_names
+
+spss_orig %>%
   as_tibble() %>%
   janitor::clean_names() %>%
   filter( !is.na(participant_no)) %>%
@@ -59,11 +78,13 @@ df_in %>%
 
 ```{r graph, results='asis'}
 
-#graph_type='dur'
+graph_type='dur'
 #make_one_introductory_graph('dur')
-make_one_introductory_graph = function( graph_type ) {
+make_one_introductory_graph = function( df1 ) {
+  graph_type = df1$type
+  label=df1$label
   cat('\n')
-  cat(paste0('# Variable ', prefix, graph_type ))
+  cat(paste0('# Variable ', prefix, graph_type, ' ', label ))
   cat('\n')
 
   df_in_long %>%
@@ -83,6 +104,17 @@ make_one_introductory_graph = function( graph_type ) {
 
   df_in_long %>%
     filter( type == graph_type ) %>%
+    mutate( cohort_period = as.factor(cohort + period - 1 )) %>%
+    ggplot( aes( cohort_period, value)) +
+    geom_boxplot() +
+    ggtitle( paste0('Boxplot for each cohort/period for variable ', prefix, graph_type , '')) %>%
+    { . } -> p
+  print(p)
+
+  cat('\n')
+
+  df_in_long %>%
+    filter( type == graph_type ) %>%
     mutate( cohort_period = cohort + period - 1 ) %>%
     group_by( cohort_period) %>%
     summarise( value = mean( value), n = n()) %>%
@@ -95,24 +127,76 @@ make_one_introductory_graph = function( graph_type ) {
   print(p)
   cat('\n')
 
+  cat("\n## Predicted Curves\n\n")
+
   df_in_long %>%
     filter( type == graph_type ) %>%
-    mutate( cohort_period = as.factor(cohort + period - 1 )) %>%
+    mutate( cohort_period = cohort + period - 1 ) %>%
     ggplot( aes( cohort_period, value)) +
-    geom_boxplot() +
-    ggtitle( paste0('Boxplot for each cohort/period for variable ', prefix, graph_type , '')) %>%
+    geom_point() +
+    geom_smooth(method = lm , se = FALSE) +
+    ggtitle( paste0('Curve prediction x^1  for variable ', prefix, graph_type, ' for each cohort/period')) %>%
     { . } -> p
   print(p)
-
   cat('\n')
+
+  df_in_long %>%
+    filter( type == graph_type ) %>%
+    mutate( cohort_period = cohort + period - 1 ) %>%
+    ggplot( aes( cohort_period, value)) +
+    geom_point() +
+    geom_smooth(method = lm, formula = y~poly(x,2,raw=TRUE) , se = FALSE) +
+    ggtitle( paste0('Curve prediction x^2  for variable ', prefix, graph_type, ' for each cohort/period')) %>%
+    { . } -> p
+  print(p)
+  cat('\n')
+
+  df_in_long %>%
+    filter( type == graph_type ) %>%
+    mutate( cohort_period = cohort + period - 1 ) %>%
+    ggplot( aes( cohort_period, value)) +
+    geom_point() +
+    geom_smooth(method = lm, formula = y~poly(x,3,raw=TRUE) , se = FALSE) +
+    ggtitle( paste0('Curve prediction x^3  for variable ', prefix, graph_type, ' for each cohort/period')) %>%
+    { . } -> p
+  print(p)
+  cat('\n')
+
+  df_in_long %>%
+    filter( type == graph_type ) %>%
+    mutate( cohort_period = cohort + period - 1 ) %>%
+    ggplot( aes( cohort_period, value)) +
+    geom_point() +
+    geom_smooth(method = lm, formula = y~poly(x,4,raw=TRUE) , se = FALSE) +
+    ggtitle( paste0('Curve prediction x^4  for variable ', prefix, graph_type, ' for each cohort/period')) %>%
+    { . } -> p
+  print(p)
+  cat('\n')
+
+  df_in_long %>%
+    filter( type == graph_type ) %>%
+    mutate( cohort_period = cohort + period - 1 ) %>%
+    ggplot( aes( cohort_period, value)) +
+    geom_point() +
+    geom_smooth(method = lm, formula = y ~ splines::bs(x, 4), se = FALSE) +
+    ggtitle( paste0('Curve prediction using bsplines of degree 4  for variable ', prefix, graph_type, ' for each cohort/period')) %>%
+    { . } -> p
+  print(p)
+  cat('\n')
+  TRUE
 
 }
 
+
+
   df_in_long %>%
     distinct( type ) %>%
-    rowwise() %>%
-    pluck('type') %>%
-    walk( make_one_introductory_graph )
+    mutate( variable = paste0(prefix, type) ) %>%
+    inner_join( df_one_names ) %>%
+    by_row(make_one_introductory_graph ) %>% 
+  { . } -> dev_null
+
+
 
 ```
 
