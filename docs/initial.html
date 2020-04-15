@@ -403,7 +403,7 @@ div.section {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-04-15
+<strong>Last updated:</strong> 2020-04-16
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -494,24 +494,22 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongbaeba67"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> baeba67 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree4d3049445e3a359d00a7f00b9f14ddc88391cfb6targetblank4d30494a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/4d3049445e3a359d00a7f00b9f14ddc88391cfb6" target="_blank">4d30494</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongbaeba67" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree4d3049445e3a359d00a7f00b9f14ddc88391cfb6targetblank4d30494a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-Untracked files:
-    Untracked:  data/Groton Maze.sav
-    Untracked:  data/Groton Maze_v2.sav
-    Untracked:  data/Ruddock et al (2016) - Coupling online control...(GCM).pdf
-    Untracked:  explore/
-    Untracked:  lib/
+Ignored files:
+    Ignored:    data/Groton Maze.sav
+    Ignored:    data/Groton Maze_v2.sav
+    Ignored:    data/Ruddock et al (2016) - Coupling online control...(GCM).pdf
 
 Unstaged changes:
-    Deleted:    .Rprofile
+    Modified:   explore/explore.R
 
 </code></pre>
 <p>
@@ -552,10 +550,44 @@ Message
 <tbody>
 <tr>
 <td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/4d3049445e3a359d00a7f00b9f14ddc88391cfb6/analysis/initial.Rmd" target="_blank">4d30494</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-04-15
+</td>
+<td>
+wflow_publish(“analysis/initial.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
 html
 </td>
 <td>
-baeba67
+<a href="https://rawcdn.githack.com/dewoller/scott_groton/4d3049445e3a359d00a7f00b9f14ddc88391cfb6/docs/initial.html" target="_blank">4d30494</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-04-15
+</td>
+<td>
+wflow_publish(“analysis/initial.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dewoller/scott_groton/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/initial.html" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -572,7 +604,7 @@ Build site.
 Rmd
 </td>
 <td>
-053928a
+<a href="https://github.com/dewoller/scott_groton/blob/053928a632952d4cb93b38081caf9de489057632/analysis/initial.Rmd" target="_blank">053928a</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -596,7 +628,7 @@ wflow_publish(“analysis/initial.Rmd”)
 #make_one_introductory_graph(&#39;dur&#39;)
 make_one_introductory_graph = function( graph_type ) {
   cat(&#39;\n&#39;)
-  cat(paste(&#39;# Summary of &#39;, graph_type, &#39;Section &#39;))
+  cat(paste0(&#39;# Variable &#39;, prefix, graph_type ))
   cat(&#39;\n&#39;)
 
   df_in_long %&gt;%
@@ -609,7 +641,7 @@ make_one_introductory_graph = function( graph_type ) {
     ggplot( aes( cohort_period, value, color=cohort   )) +
     geom_line() +
     geom_point(aes(size=n)) +
-    ggtitle( paste(&#39;Average&#39;, graph_type, &#39;by cohort &#39;)) %&gt;%
+    ggtitle( paste0(&#39;Average &#39;, prefix, graph_type, &#39; by cohort &#39;)) %&gt;%
     { . } -&gt; p
   print(p)
   cat(&#39;\n&#39;)
@@ -623,7 +655,7 @@ make_one_introductory_graph = function( graph_type ) {
     ggplot( aes( cohort_period, value)) +
     geom_line() +
     geom_point(aes(size=n)) +
-    ggtitle( paste(&#39;Average overall &#39;, graph_type, &#39; for each cohort/period&#39;)) %&gt;%
+    ggtitle( paste0(&#39;Average overall &#39;, prefix, graph_type, &#39; for each cohort/period&#39;)) %&gt;%
     { . } -&gt; p
   print(p)
   cat(&#39;\n&#39;)
@@ -633,7 +665,7 @@ make_one_introductory_graph = function( graph_type ) {
     mutate( cohort_period = as.factor(cohort + period - 1 )) %&gt;%
     ggplot( aes( cohort_period, value)) +
     geom_boxplot() +
-    ggtitle( paste(&#39;Boxplot X &#39;, graph_type , &#39;&#39;)) %&gt;%
+    ggtitle( paste0(&#39;Boxplot for each cohort/period for variable &#39;, prefix, graph_type , &#39;&#39;)) %&gt;%
     { . } -&gt; p
   print(p)
 
@@ -646,8 +678,8 @@ make_one_introductory_graph = function( graph_type ) {
     rowwise() %&gt;%
     pluck(&#39;type&#39;) %&gt;%
     walk( make_one_introductory_graph )</code></pre>
-<div id="summary-of-mps-section" class="section level1">
-<h1>Summary of mps Section</h1>
+<div id="variable-cog_gmlmps" class="section level1">
+<h1>Variable cog_gmlmps</h1>
 <p><img src="figure/initial.Rmd/graph-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-1">
@@ -673,7 +705,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-1.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -711,7 +743,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-2.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -749,7 +781,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-3.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -763,8 +795,8 @@ Dennis Wollersheim
 </div>
 </div>
 </div>
-<div id="summary-of-dur-section" class="section level1">
-<h1>Summary of dur Section</h1>
+<div id="variable-cog_gmldur" class="section level1">
+<h1>Variable cog_gmldur</h1>
 <p><img src="figure/initial.Rmd/graph-4.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-4">
@@ -790,7 +822,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-4.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -828,7 +860,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-5.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -866,7 +898,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-6.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -880,8 +912,8 @@ Dennis Wollersheim
 </div>
 </div>
 </div>
-<div id="summary-of-ter-section" class="section level1">
-<h1>Summary of ter Section</h1>
+<div id="variable-cog_gmlter" class="section level1">
+<h1>Variable cog_gmlter</h1>
 <p><img src="figure/initial.Rmd/graph-7.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-7">
@@ -907,7 +939,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-7.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -945,7 +977,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-8.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -983,7 +1015,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-9.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -997,8 +1029,8 @@ Dennis Wollersheim
 </div>
 </div>
 </div>
-<div id="summary-of-ler-section" class="section level1">
-<h1>Summary of ler Section</h1>
+<div id="variable-cog_gmller" class="section level1">
+<h1>Variable cog_gmller</h1>
 <p><img src="figure/initial.Rmd/graph-10.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-10">
@@ -1024,7 +1056,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-10.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1062,7 +1094,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-11.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1100,7 +1132,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-12.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1114,8 +1146,8 @@ Dennis Wollersheim
 </div>
 </div>
 </div>
-<div id="summary-of-rer-section" class="section level1">
-<h1>Summary of rer Section</h1>
+<div id="variable-cog_gmlrer" class="section level1">
+<h1>Variable cog_gmlrer</h1>
 <p><img src="figure/initial.Rmd/graph-13.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-13">
@@ -1141,7 +1173,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-13.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1179,7 +1211,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-14.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1217,7 +1249,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-15.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1231,8 +1263,8 @@ Dennis Wollersheim
 </div>
 </div>
 </div>
-<div id="summary-of-per-section" class="section level1">
-<h1>Summary of per Section</h1>
+<div id="variable-cog_gmlper" class="section level1">
+<h1>Variable cog_gmlper</h1>
 <p><img src="figure/initial.Rmd/graph-16.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-16">
@@ -1258,7 +1290,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-16.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1296,7 +1328,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-17.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1334,7 +1366,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-18.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1348,8 +1380,8 @@ Dennis Wollersheim
 </div>
 </div>
 </div>
-<div id="summary-of-rth-section" class="section level1">
-<h1>Summary of rth Section</h1>
+<div id="variable-cog_gmlrth" class="section level1">
+<h1>Variable cog_gmlrth</h1>
 <p><img src="figure/initial.Rmd/graph-19.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-19">
@@ -1375,7 +1407,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-19.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1413,7 +1445,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-20.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
@@ -1451,7 +1483,7 @@ Date
 <tbody>
 <tr>
 <td>
-baeba67
+<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-21.png" target="_blank">baeba67</a>
 </td>
 <td>
 Dennis Wollersheim
