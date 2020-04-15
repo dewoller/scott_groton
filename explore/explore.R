@@ -46,6 +46,10 @@ df_in %>%
 
 
 prefix='cog_gml'
+df_in %>%
+  select(-starts_with(prefix)) %>%
+  arrange(cohort)
+
 Total errors = CogGMLTER
 Rule break errors = CogGMLRER
 Duration? = CogGMLDUR
