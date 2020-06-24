@@ -1,97 +1,115 @@
-make_one_graph_set = function( df1 )
+make_one_graph_set = function( df1, df_in_long )
 {
+
   graph_type = df1$type
   label=df1$label
-  variable_name =df1$variable_name
+  variable_name =df1$variable
   cat('\n')
-  cat(paste0('# Variable ', variable_name, ' ', label ))
+  cat(glue::glue('## Variable {variable_name} {label}'))
   cat('\n')
 
   df_in_long %>%
     filter( type == graph_type ) %>%
-    group_by( cohort, period) %>%
+    { . } -> df_in_long_filtered
+
+  df_in_long_filtered %>%
+    group_by( cohort, period, cohort_period, cohort_age) %>%
     summarise( value = mean( value), n = n()) %>%
     ungroup() %>%
     mutate( cohort = as.factor(cohort)) %>%
-    ggplot( aes( cohort_period, value, color=cohort   )) +
+    ggplot( aes( cohort_age, value, color=cohort   )) +
     geom_line() +
     geom_point(aes(size=n)) +
-    ggtitle( paste0('Average ', variable_name, ' by cohort ')) %>%
+    ggtitle( glue::glue('Average {variable_name} by cohort ')) %>%
     { . } -> p
   print(p)
   cat('\n')
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    ggplot( aes( cohort_period, value)) +
-    geom_boxplot() +
-    ggtitle( paste0('Boxplot for each cohort/period for variable ', variable_name , '')) %>%
+  df_in_long_filtered %>%
+    group_by( cohort_age) %>%
+    summarise( m = mean( value ),
+              interval = sd( value) ) %>%
+    ungroup() %>%
+    mutate( sd_1_sd_u = m + interval ) %>%
+    mutate( sd_1_sd_d = m - interval ) %>%
+    mutate( sd_2_sd_u = m + interval * 2 ) %>%
+    mutate( sd_2_sd_d = m - interval  * 2) %>%
+    mutate( sd_3_sd_u = m + interval * 3 ) %>%
+    mutate( sd_3_sd_d = m - interval  * 3) %>%
+    select(cohort_age, starts_with('sd')) %>%
+    pivot_longer( -cohort_age,
+                 names_to=c('interval', 'direction'),
+                 names_pattern = 'sd_(....)_(.)',
+                 values_to='value') %>%
+                 { . } ->df_in_long_filtered_sd
+
+  df_in_long_filtered %>%
+    ggplot( ) +
+    geom_boxplot(aes( cohort_age, value, group=cohort_age)) +
+    geom_point( aes( cohort_age, value, color=interval ),
+               data= df_in_long_filtered_sd,
+               shape=3) +
+    ggtitle( glue::glue('Boxplot for each age group for variable {variable_name}')) %>%
     { . } -> p
   print(p)
 
   cat('\n')
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    group_by( cohort_period) %>%
+  df_in_long_filtered %>%
+    group_by( cohort_age) %>%
     summarise( value = mean( value), n = n()) %>%
     ungroup() %>%
-    ggplot( aes( cohort_period, value)) +
+    ggplot( aes( cohort_age, value)) +
     geom_line() +
     geom_point(aes(size=n)) +
-    ggtitle( paste0('Average overall ', variable_name, ' for each cohort/period')) %>%
+    ggtitle( glue::glue('Average overall {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
   cat('\n')
 
-  cat("\n## Predicted Curves\n\n")
+  cat("\n### Predicted Curves\n\n")
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    ggplot( aes( cohort_period, value)) +
+  df_in_long_filtered %>%
+    ggplot( aes( cohort_age, value)) +
     geom_point() +
-    geom_smooth(method = lm , se = FALSE) +
-    ggtitle( paste0('Curve prediction x^1  for variable ', variable_name, ' for each cohort/period')) %>%
+    geom_smooth(method = lm , se = TRUE) +
+    ggtitle( glue::glue('Curve prediction x^1  for variable {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
   cat('\n')
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    ggplot( aes( cohort_period, value)) +
+  df_in_long_filtered %>%
+    ggplot( aes( cohort_age, value)) +
     geom_point() +
-    geom_smooth(method = lm, formula = y~poly(x,2,raw=TRUE) , se = FALSE) +
-    ggtitle( paste0('Curve prediction x^2  for variable ', variable_name, ' for each cohort/period')) %>%
+    geom_smooth(method = lm, formula = y~poly(x,2,raw=TRUE) , se = TRUE) +
+    ggtitle( glue::glue('Curve prediction x^2  for variable {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
   cat('\n')
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    ggplot( aes( cohort_period, value)) +
+  df_in_long_filtered %>%
+    ggplot( aes( cohort_age, value)) +
     geom_point() +
-    geom_smooth(method = lm, formula = y~poly(x,3,raw=TRUE) , se = FALSE) +
-    ggtitle( paste0('Curve prediction x^3  for variable ', variable_name, ' for each cohort/period')) %>%
+    geom_smooth(method = lm, formula = y~poly(x,3,raw=TRUE) , se = TRUE) +
+    ggtitle( glue::glue('Curve prediction x^3  for variable {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
   cat('\n')
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    ggplot( aes( cohort_period, value)) +
+  df_in_long_filtered %>%
+    ggplot( aes( cohort_age, value)) +
     geom_point() +
-    geom_smooth(method = lm, formula = y~poly(x,4,raw=TRUE) , se = FALSE) +
-    ggtitle( paste0('Curve prediction x^4  for variable ', variable_name, ' for each cohort/period')) %>%
+    geom_smooth(method = lm, formula = y~poly(x,4,raw=TRUE) , se = TRUE) +
+    ggtitle( glue::glue('Curve prediction x^4  for variable {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
   cat('\n')
 
-  df_in_long %>%
-    filter( type == graph_type ) %>%
-    ggplot( aes( cohort_period, value)) +
+  df_in_long_filtered %>%
+    ggplot( aes( cohort_age, value)) +
     geom_point() +
-    geom_smooth(method = lm, formula = y ~ splines::bs(x, 4), se = FALSE) +
-    ggtitle( paste0('Curve prediction using bsplines of degree 4  for variable ', variable_name, ' for each cohort/period')) %>%
+    geom_smooth(method = lm, formula = y ~ splines::bs(x, 4), se = TRUE) +
+    ggtitle( glue::glue('Curve prediction using bsplines of degree 4  for variable {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
   cat('\n')

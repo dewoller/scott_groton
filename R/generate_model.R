@@ -44,7 +44,7 @@ generate_model <- function( target_type, df_in )
     set_mode("regression")
 
   fitOne =  function( i) {
-    fit( lm_model, formula=age ~ poly( value, i), data=df_clean) %>%
+    fit( lm_model, formula=value ~ poly( age, i), data=df_clean) %>%
       pluck('fit' ) %>%
       BIC()
   }

@@ -38,6 +38,7 @@ process_input_data<- function(prefix, spss_orig, min_mandndi)
     mutate( id = str_trim(id)) %>%
     mutate( period = as.numeric(period)) %>%
     mutate( cohort_period = cohort + period - 1 ) %>%
+    mutate( cohort_age = cohort_period / 2 + 4.5 ) %>%
     { . } -> df_in_long
 
 
