@@ -23,7 +23,8 @@ source('_drake.R')
 ```{r graph_raw, results='asis'}
 
 loadd(df_one_names)
-loadd(df_in_long)
+loadd( df_in_long )
+loadd( df_in_long_filtered )
 
 df_in_long %>%
   distinct( type ) %>%
@@ -45,21 +46,19 @@ readd(df_model) %>% gt()
 
 ```{r graph_filtered, results='asis'}
 
-df_in_long %>%
-  filter( type == 'mps') %>%
-  group_by( cohort,period ) %>%
-  filter( n() <3 )  %>%
-  distinct ( cohort, period) %>%
-  ungroup() %>%
-  { . } -> df_tofilter
-
-df_in_long %>%
+df_in_long_filtered  %>%
   distinct( type ) %>%
   mutate( variable = paste0(prefix, type) ) %>%
   inner_join( df_one_names, by='variable' ) %>%
-  by_row(make_one_graph_set, anti_join( df_in_long, df_tofilter) ) %>%
+  by_row(make_one_graph_set,  df_in_long_filtered) %>%
   { . } -> dev_null
 
+```
+
+# Filtered BIC values
+
+```{r}
+readd(df_model_filtered) %>% gt()
 ```
 
 # Reproducibility

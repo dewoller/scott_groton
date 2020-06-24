@@ -386,7 +386,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -395,7 +395,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -407,7 +407,7 @@ div.tocify {
 <strong>Last updated:</strong> 2020-06-24
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>R/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -423,12 +423,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -495,16 +495,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree00aad42becfe7870000e6898f244aae9fe9c89bdtargetblank00aad42a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/00aad42becfe7870000e6898f244aae9fe9c89bd" target="_blank">00aad42</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree8dfd675310b5a9852fee9cee22f7e0200d18b6a3targetblank8dfd675a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/8dfd675310b5a9852fee9cee22f7e0200d18b6a3" target="_blank">8dfd675</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree00aad42becfe7870000e6898f244aae9fe9c89bdtargetblank00aad42a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree8dfd675310b5a9852fee9cee22f7e0200d18b6a3targetblank8dfd675a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/00aad42becfe7870000e6898f244aae9fe9c89bd" target="_blank">00aad42</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/8dfd675310b5a9852fee9cee22f7e0200d18b6a3" target="_blank">8dfd675</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -524,20 +524,11 @@ Ignored files:
     Ignored:    data/groton.zip
 
 Untracked files:
-    Untracked:  R/maxcurv.R
-    Untracked:  R/where_is_knee.R
-    Untracked:  explore/explore_ages.R
-    Untracked:  explore/explore_models.R
-    Untracked:  tests/
+    Untracked:  R/filter_low_frequency_cohort_periods.R
 
 Unstaged changes:
-    Modified:   R/generate_model.R
-    Modified:   R/make_one_graph_set.R
-    Modified:   R/process_input_data.R
-    Modified:   _drake.R
-    Deleted:    models.md
-    Deleted:    models.txt
-    Modified:   packages.R
+    Modified:   R/plan.R
+    Modified:   analysis/initial.Rmd
 
 </code></pre>
 <p>
@@ -576,6 +567,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dewoller/scott_groton/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/initial.html" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -740,7 +748,8 @@ wflow_publish(“analysis/initial.Rmd”)
 <div id="raw-results-no-filtering" class="section level1">
 <h1>Raw results, no filtering</h1>
 <pre class="r"><code>loadd(df_one_names)
-loadd(df_in_long)
+loadd( df_in_long )
+loadd( df_in_long_filtered )
 
 df_in_long %&gt;%
   distinct( type ) %&gt;%
@@ -753,103 +762,2204 @@ df_in_long %&gt;%
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-1">
+Past versions of graph_raw-1.png
+</button>
+</p>
+<div id="fig-graph_raw-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-1.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-2.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-2">
+Past versions of graph_raw-2.png
+</button>
+</p>
+<div id="fig-graph_raw-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-2.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-3">
+Past versions of graph_raw-3.png
+</button>
+</p>
+<div id="fig-graph_raw-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-3.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-4.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-5.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-6.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-4">
+Past versions of graph_raw-4.png
+</button>
+</p>
+<div id="fig-graph_raw-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-4.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-5">
+Past versions of graph_raw-5.png
+</button>
+</p>
+<div id="fig-graph_raw-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-5.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-6">
+Past versions of graph_raw-6.png
+</button>
+</p>
+<div id="fig-graph_raw-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-6.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-7">
+Past versions of graph_raw-7.png
+</button>
+</p>
+<div id="fig-graph_raw-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-7.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmldur-groton-maze-duration-total" class="section level2">
 <h2>Variable cog_gmldur Groton Maze: Duration Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-8">
+Past versions of graph_raw-8.png
+</button>
+</p>
+<div id="fig-graph_raw-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-8.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-9">
+Past versions of graph_raw-9.png
+</button>
+</p>
+<div id="fig-graph_raw-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-9.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-10.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-10">
+Past versions of graph_raw-10.png
+</button>
+</p>
+<div id="fig-graph_raw-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-10.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-11">
+Past versions of graph_raw-11.png
+</button>
+</p>
+<div id="fig-graph_raw-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-11.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-1" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-12.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-13.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-14.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-12">
+Past versions of graph_raw-12.png
+</button>
+</p>
+<div id="fig-graph_raw-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-12.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-13.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-13">
+Past versions of graph_raw-13.png
+</button>
+</p>
+<div id="fig-graph_raw-13" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-13.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-14">
+Past versions of graph_raw-14.png
+</button>
+</p>
+<div id="fig-graph_raw-14" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-14.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-15">
+Past versions of graph_raw-15.png
+</button>
+</p>
+<div id="fig-graph_raw-15" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-15.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlter-groton-maze-total-errors-total" class="section level2">
 <h2>Variable cog_gmlter Groton Maze: Total Errors Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-16.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-16">
+Past versions of graph_raw-16.png
+</button>
+</p>
+<div id="fig-graph_raw-16" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-16.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-17.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-17">
+Past versions of graph_raw-17.png
+</button>
+</p>
+<div id="fig-graph_raw-17" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-17.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-18.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-18.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-18">
+Past versions of graph_raw-18.png
+</button>
+</p>
+<div id="fig-graph_raw-18" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-18.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-19">
+Past versions of graph_raw-19.png
+</button>
+</p>
+<div id="fig-graph_raw-19" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-19.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-2" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-20.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-21.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-22.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-20.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-20">
+Past versions of graph_raw-20.png
+</button>
+</p>
+<div id="fig-graph_raw-20" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-20.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-21.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-21">
+Past versions of graph_raw-21.png
+</button>
+</p>
+<div id="fig-graph_raw-21" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-21.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-22.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-22">
+Past versions of graph_raw-22.png
+</button>
+</p>
+<div id="fig-graph_raw-22" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-22.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-23">
+Past versions of graph_raw-23.png
+</button>
+</p>
+<div id="fig-graph_raw-23" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-23.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmller-groton-maze-legal-errors-total" class="section level2">
 <h2>Variable cog_gmller Groton Maze: Legal Errors Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-24">
+Past versions of graph_raw-24.png
+</button>
+</p>
+<div id="fig-graph_raw-24" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-24.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-25.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-25">
+Past versions of graph_raw-25.png
+</button>
+</p>
+<div id="fig-graph_raw-25" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-25.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-26.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-27.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-26.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-26">
+Past versions of graph_raw-26.png
+</button>
+</p>
+<div id="fig-graph_raw-26" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-26.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-27.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-27">
+Past versions of graph_raw-27.png
+</button>
+</p>
+<div id="fig-graph_raw-27" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-27.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-3" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-28.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-29.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-30.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-31.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-28.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-28">
+Past versions of graph_raw-28.png
+</button>
+</p>
+<div id="fig-graph_raw-28" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-28.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-29.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-29">
+Past versions of graph_raw-29.png
+</button>
+</p>
+<div id="fig-graph_raw-29" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-29.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-30.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-30">
+Past versions of graph_raw-30.png
+</button>
+</p>
+<div id="fig-graph_raw-30" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-30.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-31.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-31">
+Past versions of graph_raw-31.png
+</button>
+</p>
+<div id="fig-graph_raw-31" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-31.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlrer-groton-maze-rule-break-errors-total" class="section level2">
 <h2>Variable cog_gmlrer Groton Maze: Rule Break Errors Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-32.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-32">
+Past versions of graph_raw-32.png
+</button>
+</p>
+<div id="fig-graph_raw-32" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-32.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-33.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-33">
+Past versions of graph_raw-33.png
+</button>
+</p>
+<div id="fig-graph_raw-33" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-33.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-34.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-35.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-34.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-34">
+Past versions of graph_raw-34.png
+</button>
+</p>
+<div id="fig-graph_raw-34" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-34.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-35.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-35">
+Past versions of graph_raw-35.png
+</button>
+</p>
+<div id="fig-graph_raw-35" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-35.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-4" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-36.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-37.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-38.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-39.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-36.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-36">
+Past versions of graph_raw-36.png
+</button>
+</p>
+<div id="fig-graph_raw-36" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-36.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-37.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-37">
+Past versions of graph_raw-37.png
+</button>
+</p>
+<div id="fig-graph_raw-37" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-37.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-38.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-38">
+Past versions of graph_raw-38.png
+</button>
+</p>
+<div id="fig-graph_raw-38" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-38.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-39.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-39">
+Past versions of graph_raw-39.png
+</button>
+</p>
+<div id="fig-graph_raw-39" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-39.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlper-groton-maze-perservations-total" class="section level2">
 <h2>Variable cog_gmlper Groton Maze: Perservations Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-40.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-40">
+Past versions of graph_raw-40.png
+</button>
+</p>
+<div id="fig-graph_raw-40" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-40.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-41.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-41">
+Past versions of graph_raw-41.png
+</button>
+</p>
+<div id="fig-graph_raw-41" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-41.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-42.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-43.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-42.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-42">
+Past versions of graph_raw-42.png
+</button>
+</p>
+<div id="fig-graph_raw-42" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-42.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-43.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-43">
+Past versions of graph_raw-43.png
+</button>
+</p>
+<div id="fig-graph_raw-43" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-43.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-5" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-44.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-45.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-46.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-47.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-44.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-44">
+Past versions of graph_raw-44.png
+</button>
+</p>
+<div id="fig-graph_raw-44" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-44.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-45.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-45">
+Past versions of graph_raw-45.png
+</button>
+</p>
+<div id="fig-graph_raw-45" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-45.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-46.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-46">
+Past versions of graph_raw-46.png
+</button>
+</p>
+<div id="fig-graph_raw-46" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-46.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-47.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-47">
+Past versions of graph_raw-47.png
+</button>
+</p>
+<div id="fig-graph_raw-47" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-47.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlrth-groton-maze-return-to-head-total" class="section level2">
 <h2>Variable cog_gmlrth Groton Maze: Return to Head Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-48.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-48">
+Past versions of graph_raw-48.png
+</button>
+</p>
+<div id="fig-graph_raw-48" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-48.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_raw-49.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-49">
+Past versions of graph_raw-49.png
+</button>
+</p>
+<div id="fig-graph_raw-49" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-49.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>Warning: Removed 12 rows containing missing values (geom_point).</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-50.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_raw-51.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-50.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-50">
+Past versions of graph_raw-50.png
+</button>
+</p>
+<div id="fig-graph_raw-50" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-50.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-51.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-51">
+Past versions of graph_raw-51.png
+</button>
+</p>
+<div id="fig-graph_raw-51" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-51.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-6" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_raw-52.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-53.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-54.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-55.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_raw-56.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_raw-52.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-52">
+Past versions of graph_raw-52.png
+</button>
+</p>
+<div id="fig-graph_raw-52" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-52.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-53.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-53">
+Past versions of graph_raw-53.png
+</button>
+</p>
+<div id="fig-graph_raw-53" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-53.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-54.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-54">
+Past versions of graph_raw-54.png
+</button>
+</p>
+<div id="fig-graph_raw-54" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-54.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-55.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-55">
+Past versions of graph_raw-55.png
+</button>
+</p>
+<div id="fig-graph_raw-55" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-55.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_raw-56.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_raw-56">
+Past versions of graph_raw-56.png
+</button>
+</p>
+<div id="fig-graph_raw-56" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_raw-56.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1258,129 +3368,2624 @@ df_in_long %&gt;%
 </div>
 <div id="results-with-all-cohorts-periods-removed-that-have-n-3" class="section level1">
 <h1>Results with all cohorts / periods removed that have N &lt; 3</h1>
-<pre class="r"><code>df_in_long %&gt;%
-  filter( type == &#39;mps&#39;) %&gt;%
-  group_by( cohort,period ) %&gt;%
-  filter( n() &lt;3 )  %&gt;%
-  distinct ( cohort, period) %&gt;%
-  ungroup() %&gt;%
-  { . } -&gt; df_tofilter
-
-df_in_long %&gt;%
+<pre class="r"><code>df_in_long_filtered  %&gt;%
   distinct( type ) %&gt;%
   mutate( variable = paste0(prefix, type) ) %&gt;%
   inner_join( df_one_names, by=&#39;variable&#39; ) %&gt;%
-  by_row(make_one_graph_set, anti_join( df_in_long, df_tofilter) ) %&gt;%
+  by_row(make_one_graph_set,  df_in_long_filtered) %&gt;%
   { . } -&gt; dev_null</code></pre>
 <div id="variable-cog_gmlmps-groton-maze-moves-per-second-total-1" class="section level2">
 <h2>Variable cog_gmlmps Groton Maze: Moves Per Second Total</h2>
-<pre><code>Joining, by = c(&quot;cohort&quot;, &quot;period&quot;)</code></pre>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-1">
+Past versions of graph_filtered-1.png
+</button>
+</p>
+<div id="fig-graph_filtered-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-1.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-2.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-2">
+Past versions of graph_filtered-2.png
+</button>
+</p>
+<div id="fig-graph_filtered-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-2.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-3">
+Past versions of graph_filtered-3.png
+</button>
+</p>
+<div id="fig-graph_filtered-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-3.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-7" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-4.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-5.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-6.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-4">
+Past versions of graph_filtered-4.png
+</button>
+</p>
+<div id="fig-graph_filtered-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-4.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-5">
+Past versions of graph_filtered-5.png
+</button>
+</p>
+<div id="fig-graph_filtered-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-5.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-6">
+Past versions of graph_filtered-6.png
+</button>
+</p>
+<div id="fig-graph_filtered-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-6.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-7">
+Past versions of graph_filtered-7.png
+</button>
+</p>
+<div id="fig-graph_filtered-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-7.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmldur-groton-maze-duration-total-1" class="section level2">
 <h2>Variable cog_gmldur Groton Maze: Duration Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-8">
+Past versions of graph_filtered-8.png
+</button>
+</p>
+<div id="fig-graph_filtered-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-8.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-9">
+Past versions of graph_filtered-9.png
+</button>
+</p>
+<div id="fig-graph_filtered-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-9.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-10.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-10">
+Past versions of graph_filtered-10.png
+</button>
+</p>
+<div id="fig-graph_filtered-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-10.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-11">
+Past versions of graph_filtered-11.png
+</button>
+</p>
+<div id="fig-graph_filtered-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-11.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-8" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-12.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-13.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-14.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-12">
+Past versions of graph_filtered-12.png
+</button>
+</p>
+<div id="fig-graph_filtered-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-12.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-13.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-13">
+Past versions of graph_filtered-13.png
+</button>
+</p>
+<div id="fig-graph_filtered-13" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-13.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-14">
+Past versions of graph_filtered-14.png
+</button>
+</p>
+<div id="fig-graph_filtered-14" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-14.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-15">
+Past versions of graph_filtered-15.png
+</button>
+</p>
+<div id="fig-graph_filtered-15" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-15.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlter-groton-maze-total-errors-total-1" class="section level2">
 <h2>Variable cog_gmlter Groton Maze: Total Errors Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-16.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-16">
+Past versions of graph_filtered-16.png
+</button>
+</p>
+<div id="fig-graph_filtered-16" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-16.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-17.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-17">
+Past versions of graph_filtered-17.png
+</button>
+</p>
+<div id="fig-graph_filtered-17" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-17.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-18.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-18.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-18">
+Past versions of graph_filtered-18.png
+</button>
+</p>
+<div id="fig-graph_filtered-18" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-18.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-19">
+Past versions of graph_filtered-19.png
+</button>
+</p>
+<div id="fig-graph_filtered-19" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-19.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-9" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-20.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-21.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-22.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-20.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-20">
+Past versions of graph_filtered-20.png
+</button>
+</p>
+<div id="fig-graph_filtered-20" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-20.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-21.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-21">
+Past versions of graph_filtered-21.png
+</button>
+</p>
+<div id="fig-graph_filtered-21" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-21.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-22.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-22">
+Past versions of graph_filtered-22.png
+</button>
+</p>
+<div id="fig-graph_filtered-22" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-22.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-23">
+Past versions of graph_filtered-23.png
+</button>
+</p>
+<div id="fig-graph_filtered-23" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-23.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmller-groton-maze-legal-errors-total-1" class="section level2">
 <h2>Variable cog_gmller Groton Maze: Legal Errors Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-24">
+Past versions of graph_filtered-24.png
+</button>
+</p>
+<div id="fig-graph_filtered-24" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-24.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-25.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-25">
+Past versions of graph_filtered-25.png
+</button>
+</p>
+<div id="fig-graph_filtered-25" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-25.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-26.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-27.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-26.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-26">
+Past versions of graph_filtered-26.png
+</button>
+</p>
+<div id="fig-graph_filtered-26" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-26.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-27.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-27">
+Past versions of graph_filtered-27.png
+</button>
+</p>
+<div id="fig-graph_filtered-27" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-27.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-10" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-28.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-29.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-30.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-31.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-28.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-28">
+Past versions of graph_filtered-28.png
+</button>
+</p>
+<div id="fig-graph_filtered-28" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-28.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-29.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-29">
+Past versions of graph_filtered-29.png
+</button>
+</p>
+<div id="fig-graph_filtered-29" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-29.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-30.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-30">
+Past versions of graph_filtered-30.png
+</button>
+</p>
+<div id="fig-graph_filtered-30" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-30.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-31.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-31">
+Past versions of graph_filtered-31.png
+</button>
+</p>
+<div id="fig-graph_filtered-31" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-31.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlrer-groton-maze-rule-break-errors-total-1" class="section level2">
 <h2>Variable cog_gmlrer Groton Maze: Rule Break Errors Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-32.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-32">
+Past versions of graph_filtered-32.png
+</button>
+</p>
+<div id="fig-graph_filtered-32" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-32.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-33.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-33">
+Past versions of graph_filtered-33.png
+</button>
+</p>
+<div id="fig-graph_filtered-33" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-33.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-34.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-35.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-34.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-34">
+Past versions of graph_filtered-34.png
+</button>
+</p>
+<div id="fig-graph_filtered-34" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-34.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-35.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-35">
+Past versions of graph_filtered-35.png
+</button>
+</p>
+<div id="fig-graph_filtered-35" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-35.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-11" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-36.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-37.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-38.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-39.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-36.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-36">
+Past versions of graph_filtered-36.png
+</button>
+</p>
+<div id="fig-graph_filtered-36" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-36.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-37.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-37">
+Past versions of graph_filtered-37.png
+</button>
+</p>
+<div id="fig-graph_filtered-37" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-37.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-38.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-38">
+Past versions of graph_filtered-38.png
+</button>
+</p>
+<div id="fig-graph_filtered-38" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-38.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-39.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-39">
+Past versions of graph_filtered-39.png
+</button>
+</p>
+<div id="fig-graph_filtered-39" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-39.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlper-groton-maze-perservations-total-1" class="section level2">
 <h2>Variable cog_gmlper Groton Maze: Perservations Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-40.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-40">
+Past versions of graph_filtered-40.png
+</button>
+</p>
+<div id="fig-graph_filtered-40" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-40.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-41.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-41">
+Past versions of graph_filtered-41.png
+</button>
+</p>
+<div id="fig-graph_filtered-41" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-41.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-42.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-43.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-42.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-42">
+Past versions of graph_filtered-42.png
+</button>
+</p>
+<div id="fig-graph_filtered-42" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-42.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-43.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-43">
+Past versions of graph_filtered-43.png
+</button>
+</p>
+<div id="fig-graph_filtered-43" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-43.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-12" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-44.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-45.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-46.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-47.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-44.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-44">
+Past versions of graph_filtered-44.png
+</button>
+</p>
+<div id="fig-graph_filtered-44" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-44.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-45.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-45">
+Past versions of graph_filtered-45.png
+</button>
+</p>
+<div id="fig-graph_filtered-45" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-45.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-46.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-46">
+Past versions of graph_filtered-46.png
+</button>
+</p>
+<div id="fig-graph_filtered-46" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-46.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-47.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-47">
+Past versions of graph_filtered-47.png
+</button>
+</p>
+<div id="fig-graph_filtered-47" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-47.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="variable-cog_gmlrth-groton-maze-return-to-head-total-1" class="section level2">
 <h2>Variable cog_gmlrth Groton Maze: Return to Head Total</h2>
 <pre><code>`summarise()` regrouping output by &#39;cohort&#39;, &#39;period&#39;, &#39;cohort_period&#39; (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-48.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-48">
+Past versions of graph_filtered-48.png
+</button>
+</p>
+<div id="fig-graph_filtered-48" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-48.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img src="figure/initial.Rmd/graph_filtered-49.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-49">
+Past versions of graph_filtered-49.png
+</button>
+</p>
+<div id="fig-graph_filtered-49" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-49.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-50.png" width="672" style="display: block; margin: auto;" /><img src="figure/initial.Rmd/graph_filtered-51.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-50.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-50">
+Past versions of graph_filtered-50.png
+</button>
+</p>
+<div id="fig-graph_filtered-50" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-50.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-51.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-51">
+Past versions of graph_filtered-51.png
+</button>
+</p>
+<div id="fig-graph_filtered-51" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-51.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="predicted-curves-13" class="section level3">
 <h3>Predicted Curves</h3>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph_filtered-52.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-53.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-54.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-55.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph_filtered-56.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph_filtered-52.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-52">
+Past versions of graph_filtered-52.png
+</button>
+</p>
+<div id="fig-graph_filtered-52" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-52.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p><img src="figure/initial.Rmd/graph_filtered-53.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-53">
+Past versions of graph_filtered-53.png
+</button>
+</p>
+<div id="fig-graph_filtered-53" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-53.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-54.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-54">
+Past versions of graph_filtered-54.png
+</button>
+</p>
+<div id="fig-graph_filtered-54" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-54.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-55.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-55">
+Past versions of graph_filtered-55.png
+</button>
+</p>
+<div id="fig-graph_filtered-55" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-55.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/initial.Rmd/graph_filtered-56.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph_filtered-56">
+Past versions of graph_filtered-56.png
+</button>
+</p>
+<div id="fig-graph_filtered-56" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/c4f6a548d8dc85f66d985337400b7d26ab79341d/docs/figure/initial.Rmd/graph_filtered-56.png" target="_blank">c4f6a54</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="filtered-bic-values" class="section level1">
+<h1>Filtered BIC values</h1>
+<pre class="r"><code>readd(df_model_filtered) %&gt;% gt()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#nokgerxfyj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nokgerxfyj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nokgerxfyj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nokgerxfyj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nokgerxfyj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nokgerxfyj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nokgerxfyj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nokgerxfyj .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nokgerxfyj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nokgerxfyj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nokgerxfyj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nokgerxfyj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nokgerxfyj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nokgerxfyj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#nokgerxfyj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nokgerxfyj .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nokgerxfyj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#nokgerxfyj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nokgerxfyj .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#nokgerxfyj .gt_left {
+  text-align: left;
+}
+
+#nokgerxfyj .gt_center {
+  text-align: center;
+}
+
+#nokgerxfyj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nokgerxfyj .gt_font_normal {
+  font-weight: normal;
+}
+
+#nokgerxfyj .gt_font_bold {
+  font-weight: bold;
+}
+
+#nokgerxfyj .gt_font_italic {
+  font-style: italic;
+}
+
+#nokgerxfyj .gt_super {
+  font-size: 65%;
+}
+
+#nokgerxfyj .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="nokgerxfyj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">target_type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 4</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left">dur</td>
+      <td class="gt_row gt_right">15301.5442</td>
+      <td class="gt_row gt_right">15245.6600</td>
+      <td class="gt_row gt_right">15238.0992</td>
+      <td class="gt_row gt_right">15244.5487</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">ler</td>
+      <td class="gt_row gt_right">4418.7979</td>
+      <td class="gt_row gt_right">4418.1250</td>
+      <td class="gt_row gt_right">4424.5327</td>
+      <td class="gt_row gt_right">4430.5212</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">mps</td>
+      <td class="gt_row gt_right">-690.7641</td>
+      <td class="gt_row gt_right">-691.7348</td>
+      <td class="gt_row gt_right">-688.2013</td>
+      <td class="gt_row gt_right">-681.8201</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">per</td>
+      <td class="gt_row gt_right">1195.4487</td>
+      <td class="gt_row gt_right">1200.7724</td>
+      <td class="gt_row gt_right">1207.0960</td>
+      <td class="gt_row gt_right">1212.5897</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">rer</td>
+      <td class="gt_row gt_right">3911.8455</td>
+      <td class="gt_row gt_right">3874.5022</td>
+      <td class="gt_row gt_right">3878.7246</td>
+      <td class="gt_row gt_right">3885.0513</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">rth</td>
+      <td class="gt_row gt_right">4695.0629</td>
+      <td class="gt_row gt_right">4682.1888</td>
+      <td class="gt_row gt_right">4688.6236</td>
+      <td class="gt_row gt_right">4694.9654</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">ter</td>
+      <td class="gt_row gt_right">4854.1595</td>
+      <td class="gt_row gt_right">4834.6183</td>
+      <td class="gt_row gt_right">4840.7954</td>
+      <td class="gt_row gt_right">4847.1771</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
 </div>
 <div id="reproducibility" class="section level1">
 <h1>Reproducibility</h1>
 <pre class="r"><code>## datetime
 Sys.time()</code></pre>
-<pre><code>[1] &quot;2020-06-24 21:55:30 AEST&quot;</code></pre>
+<pre><code>[1] &quot;2020-06-24 22:13:28 AEST&quot;</code></pre>
 <pre class="r"><code>## repository
 git2r::repository()</code></pre>
 <pre><code>Local:    master /home/dewoller/mydoc/research/scott_groton_maze/R
 Remote:   master @ origin (git@github.com:dewoller/scott_groton.git)
-Head:     [00aad42] 2020-06-24: workflowr::wflow_publish(&quot;analysis/initial.Rmd&quot;)</code></pre>
+Head:     [8dfd675] 2020-06-24: for scott</code></pre>
 <pre class="r"><code>## session info
 sessionInfo()</code></pre>
 <pre><code>R version 4.0.2 (2020-06-22)

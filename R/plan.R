@@ -14,7 +14,9 @@ the_plan <-
              spss_orig  = read.spss('data/Groton Maze_v2.sav') ,
              df_in_long = process_input_data(prefix, spss_orig, min_mandndi )  ,
              df_one_names = get_spss_names( spss_orig )  ,
+             df_in_long_filtered = filter_low_frequency( df_in_long ),
              df_model = generate_all_models( df_in_long ),
+             df_model_filtered = generate_all_models( df_in_long_filtered ),
              graphs = target(
                                   command = {
                                     knitr_in("R/make_one_graph_set.R")
