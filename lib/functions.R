@@ -1,18 +1,6 @@
 #!/usr/bin/env Rscript
 
 
-library( 'workflowr')
-library("seas")
-library("magrittr")
-library("stringr")
-library("knitr")
-#library("kableExtra")
-#library("pander")
-library("lubridate")
-library("foreign" )
-library("wrapr" )   # for the qc function
-#library("ordinal" )
-library("tidyverse")
 
 
 

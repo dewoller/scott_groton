@@ -1,0 +1,17 @@
+linters: with_defaults(
+    spaces_inside_linter = NULL, # 98
+    single_quotes_linter = NULL, # 51
+    commas_linter = NULL, # 18
+    closed_curly_linter = NULL, # 17
+    open_curly_linter = NULL, # 17
+    infix_spaces_linter = NULL, # 16
+    trailing_whitespace_linter = NULL, # 7
+    assignment_linter = NULL, # 6
+    commented_code_linter = NULL, # 3
+    trailing_blank_lines_linter = NULL, # 3
+    line_length_linter = NULL, # 1
+    object_usage_linter = NULL, 
+    object_name_linter= NULL, 
+    dummy_linter = NULL
+  )
+exclusions: list( )
