@@ -27,6 +27,14 @@
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -365,13 +373,6 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<!-- Add a small amount of space between sections. -->
-<style type="text/css">
-div.section {
-  padding-top: 12px;
-}
-</style>
-
 <div class="fluid-row" id="header">
 
 
@@ -385,7 +386,7 @@ div.section {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -394,7 +395,7 @@ div.section {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -403,17 +404,17 @@ div.section {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-04-16
+<strong>Last updated:</strong> 2020-05-01
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
-<strong>Knit directory:</strong> <code>R/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+<strong>Knit directory:</strong> <code>scott_groton/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
 </p>
 <p>
 This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
-  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.4.0.9001). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
 </p>
 <hr>
 </div>
@@ -422,12 +423,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -494,19 +495,26 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree87a580e7325c81d9178911d818963d550daabf20targetblank87a580ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/87a580e7325c81d9178911d818963d550daabf20" target="_blank">87a580e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree4c405479fa663281fe6d95505ca3b5da0fd88e20targetblank4c40547a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/4c405479fa663281fe6d95505ca3b5da0fd88e20" target="_blank">4c40547</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree87a580e7325c81d9178911d818963d550daabf20targetblank87a580ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree4c405479fa663281fe6d95505ca3b5da0fd88e20targetblank4c40547a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
-Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/4c405479fa663281fe6d95505ca3b5da0fd88e20" target="_blank">4c40547</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    data/Groton Maze.sav
-    Ignored:    data/Groton Maze_v2.sav
-    Ignored:    data/Ruddock et al (2016) - Coupling online control...(GCM).pdf
+    Ignored:    .Rproj.user/
+
+Unstaged changes:
+    Modified:   analysis/initial.Rmd
 
 </code></pre>
 <p>
@@ -521,7 +529,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the R Markdown and HTML files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view them.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/initial.Rmd</code>) and HTML (<code>docs/initial.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -547,6 +555,23 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dewoller/scott_groton/4c405479fa663281fe6d95505ca3b5da0fd88e20/docs/initial.html" target="_blank">4c40547</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-04-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
@@ -556,7 +581,7 @@ Rmd
 Dennis Wollersheim
 </td>
 <td>
-2020-04-15
+2020-04-16
 </td>
 <td>
 wflow_publish(“analysis/initial.Rmd”)
@@ -573,7 +598,7 @@ html
 Dennis Wollersheim
 </td>
 <td>
-2020-04-15
+2020-04-16
 </td>
 <td>
 Build site.
@@ -590,7 +615,7 @@ Rmd
 Dennis Wollersheim
 </td>
 <td>
-2020-04-15
+2020-04-16
 </td>
 <td>
 wflow_publish(“analysis/initial.Rmd”)
@@ -607,7 +632,7 @@ html
 Dennis Wollersheim
 </td>
 <td>
-2020-04-15
+2020-04-16
 </td>
 <td>
 wflow_publish(“analysis/initial.Rmd”)
@@ -624,7 +649,7 @@ html
 Dennis Wollersheim
 </td>
 <td>
-2020-04-14
+2020-04-15
 </td>
 <td>
 Build site.
@@ -641,7 +666,7 @@ Rmd
 Dennis Wollersheim
 </td>
 <td>
-2020-04-14
+2020-04-15
 </td>
 <td>
 wflow_publish(“analysis/initial.Rmd”)
@@ -775,1053 +800,29 @@ make_one_introductory_graph = function( df1 ) {
 <pre><code>Joining, by = &quot;variable&quot;</code></pre>
 <div id="variable-cog_gmlmps-groton-maze-moves-per-second-total" class="section level1">
 <h1>Variable cog_gmlmps Groton Maze: Moves Per Second Total</h1>
-<p><img src="figure/initial.Rmd/graph-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-1">
-Past versions of graph-1.png
-</button>
-</p>
-<div id="fig-graph-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-1.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-1.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-2.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-2">
-Past versions of graph-2.png
-</button>
-</p>
-<div id="fig-graph-2" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-2.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-2.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-3.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-3">
-Past versions of graph-3.png
-</button>
-</p>
-<div id="fig-graph-3" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-3.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-3.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/initial.Rmd/graph-1.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-2.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-3.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="predicted-curves" class="section level2">
 <h2>Predicted Curves</h2>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph-4.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-4">
-Past versions of graph-4.png
-</button>
-</p>
-<div id="fig-graph-4" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-4.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-4.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-5.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-5">
-Past versions of graph-5.png
-</button>
-</p>
-<div id="fig-graph-5" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-5.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-5.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-6.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-6">
-Past versions of graph-6.png
-</button>
-</p>
-<div id="fig-graph-6" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-6.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-6.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-7.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-7">
-Past versions of graph-7.png
-</button>
-</p>
-<div id="fig-graph-7" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-7.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-7.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-8.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-8">
-Past versions of graph-8.png
-</button>
-</p>
-<div id="fig-graph-8" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-8.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-8.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/initial.Rmd/graph-4.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-5.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-6.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-7.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-8.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="variable-cog_gmldur-groton-maze-duration-total" class="section level1">
 <h1>Variable cog_gmldur Groton Maze: Duration Total</h1>
-<p><img src="figure/initial.Rmd/graph-9.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-9">
-Past versions of graph-9.png
-</button>
-</p>
-<div id="fig-graph-9" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-9.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-9.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-10.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-10">
-Past versions of graph-10.png
-</button>
-</p>
-<div id="fig-graph-10" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-10.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-10.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-11.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-11">
-Past versions of graph-11.png
-</button>
-</p>
-<div id="fig-graph-11" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-11.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-11.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/initial.Rmd/graph-9.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-10.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-11.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="predicted-curves-1" class="section level2">
 <h2>Predicted Curves</h2>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph-12.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-12">
-Past versions of graph-12.png
-</button>
-</p>
-<div id="fig-graph-12" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-12.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-12.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-13.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-13">
-Past versions of graph-13.png
-</button>
-</p>
-<div id="fig-graph-13" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-13.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-13.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-14.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-14">
-Past versions of graph-14.png
-</button>
-</p>
-<div id="fig-graph-14" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-14.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-14.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-15.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-15">
-Past versions of graph-15.png
-</button>
-</p>
-<div id="fig-graph-15" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-15.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-15.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-16.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-16">
-Past versions of graph-16.png
-</button>
-</p>
-<div id="fig-graph-16" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-16.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-16.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/initial.Rmd/graph-12.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-13.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-14.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-15.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-16.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="variable-cog_gmlter-groton-maze-total-errors-total" class="section level1">
 <h1>Variable cog_gmlter Groton Maze: Total Errors Total</h1>
-<p><img src="figure/initial.Rmd/graph-17.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-17">
-Past versions of graph-17.png
-</button>
-</p>
-<div id="fig-graph-17" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-17.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-17.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-18.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-18">
-Past versions of graph-18.png
-</button>
-</p>
-<div id="fig-graph-18" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-18.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-18.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-19.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-19">
-Past versions of graph-19.png
-</button>
-</p>
-<div id="fig-graph-19" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-19.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-19.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/initial.Rmd/graph-17.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-18.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-19.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="predicted-curves-2" class="section level2">
 <h2>Predicted Curves</h2>
 <pre><code>`geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/initial.Rmd/graph-20.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-20">
-Past versions of graph-20.png
-</button>
-</p>
-<div id="fig-graph-20" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-20.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-20.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-21.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-graph-21">
-Past versions of graph-21.png
-</button>
-</p>
-<div id="fig-graph-21" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/ae0a2df5db552f24de5894231b52353bc1c3ddb7/docs/figure/initial.Rmd/graph-21.png" target="_blank">ae0a2df</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dewoller/scott_groton/blob/baeba670ae3cdb6a94cb8e336c590c9f8eddbdbf/docs/figure/initial.Rmd/graph-21.png" target="_blank">baeba67</a>
-</td>
-<td>
-Dennis Wollersheim
-</td>
-<td>
-2020-04-14
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/initial.Rmd/graph-22.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-23.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/initial.Rmd/graph-20.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-21.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-22.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-23.png" width="672" style="display: block; margin: auto;" /> <img src="figure/initial.Rmd/graph-24.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="variable-cog_gmller-groton-maze-legal-errors-total" class="section level1">
@@ -1866,50 +867,44 @@ Dennis Wollersheim
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 3.6.1 (2019-07-05)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 18.04.4 LTS
+<pre><code>R version 4.0.0 (2020-04-24)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 18362)
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3
-LAPACK: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.2.20.so
 
 locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+[1] LC_COLLATE=English_Australia.1252  LC_CTYPE=English_Australia.1252   
+[3] LC_MONETARY=English_Australia.1252 LC_NUMERIC=C                      
+[5] LC_TIME=English_Australia.1252    
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] purrrlyr_0.0.5       forcats_0.5.0        dplyr_0.8.5         
- [4] purrr_0.3.3          readr_1.3.1          tidyr_1.0.2         
- [7] tibble_3.0.0         ggplot2_3.3.0        tidyverse_1.3.0     
-[10] wrapr_1.8.9          foreign_0.8-72       lubridate_1.7.8     
-[13] knitr_1.28           stringr_1.4.0        magrittr_1.5        
-[16] seas_0.5-2           MASS_7.3-51.4        workflowr_1.4.0.9001
-[19] nvimcom_0.9-82      
+ [1] purrrlyr_0.0.5  forcats_0.5.0   dplyr_0.8.5     purrr_0.3.4    
+ [5] readr_1.3.1     tidyr_1.0.2     tibble_3.0.1    ggplot2_3.3.0  
+ [9] tidyverse_1.3.0 wrapr_2.0.0     foreign_0.8-78  lubridate_1.7.8
+[13] knitr_1.28      stringr_1.4.0   magrittr_1.5    seas_0.5-2     
+[17] MASS_7.3-51.5   workflowr_1.6.2
 
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.4.6     lattice_0.20-41  assertthat_0.2.1 rprojroot_1.3-2 
  [5] digest_0.6.25    R6_2.4.1         cellranger_1.1.0 backports_1.1.6 
  [9] reprex_0.3.0     evaluate_0.14    httr_1.4.1       pillar_1.4.3    
 [13] rlang_0.4.5      readxl_1.3.1     rstudioapi_0.11  whisker_0.4     
-[17] Matrix_1.2-18    rmarkdown_2.1.1  splines_3.6.1    labeling_0.3    
-[21] munsell_0.5.0    broom_0.5.5      compiler_3.6.1   modelr_0.1.6    
-[25] janitor_2.0.0    xfun_0.12        pkgconfig_2.0.3  mgcv_1.8-31     
-[29] htmltools_0.4.0  tidyselect_1.0.0 fansi_0.4.1      crayon_1.3.4    
-[33] dbplyr_1.4.2     withr_2.1.2      grid_3.6.1       nlme_3.1-142    
-[37] jsonlite_1.6.1   gtable_0.3.0     lifecycle_0.2.0  DBI_1.1.0       
-[41] git2r_0.26.1     scales_1.1.0     cli_2.0.2        stringi_1.4.6   
-[45] farver_2.0.3     fs_1.4.1         snakecase_0.11.0 xml2_1.3.1      
-[49] ellipsis_0.3.0   generics_0.0.2   vctrs_0.2.4      tools_3.6.1     
-[53] glue_1.4.0       hms_0.5.3        yaml_2.2.1       colorspace_1.4-1
-[57] rvest_0.3.5      haven_2.2.0     </code></pre>
+[17] Matrix_1.2-18    rmarkdown_2.1    splines_4.0.0    labeling_0.3    
+[21] munsell_0.5.0    broom_0.5.6      compiler_4.0.0   httpuv_1.5.2    
+[25] modelr_0.1.7     janitor_2.0.1    xfun_0.13        pkgconfig_2.0.3 
+[29] mgcv_1.8-31      htmltools_0.4.0  tidyselect_1.0.0 fansi_0.4.1     
+[33] crayon_1.3.4     dbplyr_1.4.3     withr_2.2.0      later_1.0.0     
+[37] grid_4.0.0       nlme_3.1-147     jsonlite_1.6.1   gtable_0.3.0    
+[41] lifecycle_0.2.0  DBI_1.1.0        git2r_0.26.1     scales_1.1.0    
+[45] cli_2.0.2        stringi_1.4.6    farver_2.0.3     fs_1.4.1        
+[49] promises_1.1.0   snakecase_0.11.0 xml2_1.3.1       ellipsis_0.3.0  
+[53] generics_0.0.2   vctrs_0.2.4      tools_4.0.0      glue_1.4.0      
+[57] hms_0.5.3        yaml_2.2.1       colorspace_1.4-1 rvest_0.3.5     
+[61] haven_2.2.0     </code></pre>
 </div>
 </div>
 </div>
@@ -1976,7 +971,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
