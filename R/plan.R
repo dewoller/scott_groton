@@ -10,13 +10,18 @@ prefix='cog_gml'  # all relevant variables start with this
 
 the_plan <-
   drake_plan(
-   ## Plan targets in here.
+             # get data
              spss_orig  = read.spss('data/Groton Maze_v2.sav') ,
-             df_in_long = process_input_data(prefix, spss_orig, min_mandndi )  ,
+             df_in = process_input_data_df_in(prefix, spss_orig, min_mandndi )  ,
+             df_in_long = process_input_data_df_in_long( df_in )  ,
              df_one_names = get_spss_names( spss_orig )  ,
              df_in_long_filtered = filter_low_frequency( df_in_long ),
+
+             # model data
              df_model = generate_all_models( df_in_long ),
              df_model_filtered = generate_all_models( df_in_long_filtered ),
+
+             # generate reports
              graphs = target(
                                   command = {
                                     knitr_in("R/make_one_graph_set.R")

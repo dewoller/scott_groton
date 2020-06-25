@@ -12,11 +12,13 @@
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#
 # end diabetes
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#
-#generate_model( 'ler', df_in)
-generate_model <- function( target_type, df_in )
+#generate_model( data.frame(target_type='ler'), df_in_long)
+#target_type = 'ler'
+
+generate_model <- function( target_type, df_in_long )
 {
 
-  df_in %>%
+  df_in_long %>%
     dplyr::filter( type == pluck(target_type,1,1) ) %>%
     mutate(age = cohort + period - 1) %>%
     select( value, age) %>%

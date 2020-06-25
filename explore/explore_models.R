@@ -25,11 +25,10 @@ df_in %>%
 
 
   #generate_model( 'ler', df_in)
-  df_in %>%
+  df_in_long %>%
     #dplyr::filter( type == pluck(target_type,1,1) ) %>%
     dplyr::filter( type == pluck('ler',1,1) ) %>%
-    mutate(age = cohort + period - 1) %>%
-    select( value, age) %>%
+    select( value, cohort_age) %>%
     { . } -> df_clean
 
   lm_model <-
@@ -37,16 +36,24 @@ df_in %>%
     set_engine("lm") %>%
     set_mode("regression")
 
-    fit( lm_model, formula=age ~ poly( value, 2), data=df_clean) %>% 
+    fit( lm_model, formula=value ~ poly( age, 2), data=df_clean) %>%
     { . } -> a
 
-  findiplist(a)
+  lm( value ~ poly( cohort_age, 2), data=df_clean) %>%
+    { . } -> a
 
-      pluck('fit' ) %>% 
-      { . } -> a
+  predict(a, newdata=tibble(cohort_age=min(df_clean$cohort_age):max(df_clean$cohort_age))) %>% 
+  { . } -> b 
 
+  where_is_knee(b) %>% 
+  { . } -> d
 
-      BIC()
+try = function(x) 4
+
+maxcurv( c(min(df_clean$cohort_age),max(df_clean$cohort_age)),~ poly( cohort_age, 2))
+
+           )) %>% )
+
 
 
 

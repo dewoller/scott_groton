@@ -17,6 +17,7 @@ library(janitor)
 library(caret)
 library(parsnip)
 library(gt)
+library(testthat)
 
 
 conflict_prefer("filter", "dplyr")
