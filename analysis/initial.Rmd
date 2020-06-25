@@ -38,7 +38,20 @@ df_in_long %>%
 # Raw BIC values
 
 ```{r}
-readd(df_model) %>% gt()
+
+readd(df_model) %>%
+  gt() %>%
+  data_color(
+             columns = 2:8,
+             colors = scales::col_numeric(
+                                          palette = paletteer::paletteer_d(
+                                                                           palette = "ggsci::red_material"
+                                                                           ) %>% as.character(),
+                                          domain = NULL
+                                          ),
+             alpha = 0.8
+  )
+
 ```
 
 
