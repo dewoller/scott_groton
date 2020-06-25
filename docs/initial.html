@@ -386,7 +386,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -395,7 +395,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -404,10 +404,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-24
+<strong>Last updated:</strong> 2020-06-25
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>R/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -423,12 +423,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -495,16 +495,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree8dfd675310b5a9852fee9cee22f7e0200d18b6a3targetblank8dfd675a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/8dfd675310b5a9852fee9cee22f7e0200d18b6a3" target="_blank">8dfd675</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree19a5037d4d54a87573f67b1b321d26c7eb3da6betargetblank19a5037a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/19a5037d4d54a87573f67b1b321d26c7eb3da6be" target="_blank">19a5037</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree8dfd675310b5a9852fee9cee22f7e0200d18b6a3targetblank8dfd675a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree19a5037d4d54a87573f67b1b321d26c7eb3da6betargetblank19a5037a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/8dfd675310b5a9852fee9cee22f7e0200d18b6a3" target="_blank">8dfd675</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/19a5037d4d54a87573f67b1b321d26c7eb3da6be" target="_blank">19a5037</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -524,11 +524,20 @@ Ignored files:
     Ignored:    data/groton.zip
 
 Untracked files:
-    Untracked:  R/filter_low_frequency_cohort_periods.R
+    Untracked:  R/age_months_to_cohort.R
+    Untracked:  R/cohort_to_age_group.R
+    Untracked:  R/process_input_data_df_in.R
+    Untracked:  R/process_input_data_df_in_long.R
 
 Unstaged changes:
+    Modified:   R/generate_all_models.R
+    Modified:   R/generate_model.R
+    Modified:   R/make_one_graph_set.R
     Modified:   R/plan.R
-    Modified:   analysis/initial.Rmd
+    Deleted:    R/process_input_data.R
+    Modified:   explore/explore_ages.R
+    Modified:   explore/explore_models.R
+    Modified:   packages.R
 
 </code></pre>
 <p>
@@ -567,6 +576,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/19a5037d4d54a87573f67b1b321d26c7eb3da6be/analysis/initial.Rmd" target="_blank">19a5037</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-25
+</td>
+<td>
+workflowr::wflow_publish(“analysis/initial.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dewoller/scott_groton/blob/88f4ca542523dbeb7983bb7edaef24588e6f7ec1/analysis/initial.Rmd" target="_blank">88f4ca5</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+for scott
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dewoller/scott_groton/88f4ca542523dbeb7983bb7edaef24588e6f7ec1/docs/initial.html" target="_blank">88f4ca5</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+for scott
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -2965,7 +3025,18 @@ Dennis Wollersheim
 </div>
 <div id="raw-bic-values" class="section level1">
 <h1>Raw BIC values</h1>
-<pre class="r"><code>readd(df_model) %&gt;% gt()</code></pre>
+<pre class="r"><code>readd(df_model) %&gt;%
+  gt() %&gt;%
+  data_color(
+             columns = 2:8,
+             colors = scales::col_numeric(
+                                          palette = paletteer::paletteer_d(
+                                                                           palette = &quot;ggsci::red_material&quot;
+                                                                           ) %&gt;% as.character(),
+                                          domain = NULL
+                                          ),
+             alpha = 0.8
+  )</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -3304,62 +3375,56 @@ Dennis Wollersheim
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">target_type</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 1</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 2</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 3</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 4</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">power</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">dur</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ler</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mps</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">per</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">rer</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">rth</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ter</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_left">dur</td>
-      <td class="gt_row gt_right">15627.6390</td>
-      <td class="gt_row gt_right">15539.0988</td>
-      <td class="gt_row gt_right">15496.5849</td>
-      <td class="gt_row gt_right">15486.338</td>
+      <td class="gt_row gt_left">Power 1</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">15628.55</td>
+      <td class="gt_row gt_right" style="background-color: rgba(240,157,157,0.8); color: #000000;">4470.633</td>
+      <td class="gt_row gt_right" style="background-color: rgba(240,79,73,0.8); color: #000000;">-701.7053</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">1210.756</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">3968.176</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">4757.044</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">4917.532</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">ler</td>
-      <td class="gt_row gt_right">4470.5626</td>
-      <td class="gt_row gt_right">4467.8740</td>
-      <td class="gt_row gt_right">4474.3351</td>
-      <td class="gt_row gt_right">4480.799</td>
+      <td class="gt_row gt_left">Power 2</td>
+      <td class="gt_row gt_right" style="background-color: rgba(233,105,104,0.8); color: #000000;">15539.13</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">4467.852</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">-706.0009</td>
+      <td class="gt_row gt_right" style="background-color: rgba(234,131,131,0.8); color: #000000;">1215.705</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">3925.052</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">4739.062</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">4892.882</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">mps</td>
-      <td class="gt_row gt_right">-702.6555</td>
-      <td class="gt_row gt_right">-706.5122</td>
-      <td class="gt_row gt_right">-704.0162</td>
-      <td class="gt_row gt_right">-697.553</td>
+      <td class="gt_row gt_left">Power 3</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,216,220,0.8); color: #000000;">15496.72</td>
+      <td class="gt_row gt_right" style="background-color: rgba(242,75,67,0.8); color: #FFFFFF;">4474.314</td>
+      <td class="gt_row gt_right" style="background-color: rgba(234,132,132,0.8); color: #000000;">-703.4165</td>
+      <td class="gt_row gt_right" style="background-color: rgba(230,58,53,0.8); color: #FFFFFF;">1222.107</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,216,220,0.8); color: #000000;">3928.043</td>
+      <td class="gt_row gt_right" style="background-color: rgba(230,113,113,0.8); color: #000000;">4745.176</td>
+      <td class="gt_row gt_right" style="background-color: rgba(238,150,149,0.8); color: #000000;">4898.678</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">per</td>
-      <td class="gt_row gt_right">1210.5957</td>
-      <td class="gt_row gt_right">1215.6382</td>
-      <td class="gt_row gt_right">1222.0526</td>
-      <td class="gt_row gt_right">1227.919</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">rer</td>
-      <td class="gt_row gt_right">3967.1704</td>
-      <td class="gt_row gt_right">3925.1775</td>
-      <td class="gt_row gt_right">3927.9443</td>
-      <td class="gt_row gt_right">3934.039</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">rth</td>
-      <td class="gt_row gt_right">4756.8368</td>
-      <td class="gt_row gt_right">4739.0519</td>
-      <td class="gt_row gt_right">4745.1774</td>
-      <td class="gt_row gt_right">4751.374</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">ter</td>
-      <td class="gt_row gt_right">4916.8643</td>
-      <td class="gt_row gt_right">4892.7790</td>
-      <td class="gt_row gt_right">4898.5374</td>
-      <td class="gt_row gt_right">4904.916</td>
+      <td class="gt_row gt_left">Power 4</td>
+      <td class="gt_row gt_right" style="background-color: rgba(255,235,238,0.8); color: #000000;">15486.78</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">4480.777</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">-696.9504</td>
+      <td class="gt_row gt_right" style="background-color: rgba(183,28,28,0.8); color: #FFFFFF;">1227.987</td>
+      <td class="gt_row gt_right" style="background-color: rgba(241,159,160,0.8); color: #000000;">3934.141</td>
+      <td class="gt_row gt_right" style="background-color: rgba(226,55,52,0.8); color: #FFFFFF;">4751.392</td>
+      <td class="gt_row gt_right" style="background-color: rgba(241,76,69,0.8); color: #FFFFFF;">4905.064</td>
     </tr>
   </tbody>
   
@@ -5914,62 +5979,56 @@ Dennis Wollersheim
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">target_type</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 1</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 2</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 3</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Power 4</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">power</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">dur</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ler</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mps</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">per</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">rer</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">rth</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ter</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_left">dur</td>
-      <td class="gt_row gt_right">15301.5442</td>
-      <td class="gt_row gt_right">15245.6600</td>
-      <td class="gt_row gt_right">15238.0992</td>
-      <td class="gt_row gt_right">15244.5487</td>
+      <td class="gt_row gt_left">Power 1</td>
+      <td class="gt_row gt_right">15229.91</td>
+      <td class="gt_row gt_right">4399.311</td>
+      <td class="gt_row gt_right">-688.6477</td>
+      <td class="gt_row gt_right">1190.591</td>
+      <td class="gt_row gt_right">3893.860</td>
+      <td class="gt_row gt_right">4674.005</td>
+      <td class="gt_row gt_right">4832.333</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">ler</td>
-      <td class="gt_row gt_right">4418.7979</td>
-      <td class="gt_row gt_right">4418.1250</td>
-      <td class="gt_row gt_right">4424.5327</td>
-      <td class="gt_row gt_right">4430.5212</td>
+      <td class="gt_row gt_left">Power 2</td>
+      <td class="gt_row gt_right">15174.32</td>
+      <td class="gt_row gt_right">4398.640</td>
+      <td class="gt_row gt_right">-689.5343</td>
+      <td class="gt_row gt_right">1195.939</td>
+      <td class="gt_row gt_right">3856.877</td>
+      <td class="gt_row gt_right">4661.173</td>
+      <td class="gt_row gt_right">4812.949</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">mps</td>
-      <td class="gt_row gt_right">-690.7641</td>
-      <td class="gt_row gt_right">-691.7348</td>
-      <td class="gt_row gt_right">-688.2013</td>
-      <td class="gt_row gt_right">-681.8201</td>
+      <td class="gt_row gt_left">Power 3</td>
+      <td class="gt_row gt_right">15167.03</td>
+      <td class="gt_row gt_right">4405.046</td>
+      <td class="gt_row gt_right">-685.8484</td>
+      <td class="gt_row gt_right">1202.231</td>
+      <td class="gt_row gt_right">3861.284</td>
+      <td class="gt_row gt_right">4667.604</td>
+      <td class="gt_row gt_right">4819.151</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">per</td>
-      <td class="gt_row gt_right">1195.4487</td>
-      <td class="gt_row gt_right">1200.7724</td>
-      <td class="gt_row gt_right">1207.0960</td>
-      <td class="gt_row gt_right">1212.5897</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">rer</td>
-      <td class="gt_row gt_right">3911.8455</td>
-      <td class="gt_row gt_right">3874.5022</td>
-      <td class="gt_row gt_right">3878.7246</td>
-      <td class="gt_row gt_right">3885.0513</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">rth</td>
-      <td class="gt_row gt_right">4695.0629</td>
-      <td class="gt_row gt_right">4682.1888</td>
-      <td class="gt_row gt_right">4688.6236</td>
-      <td class="gt_row gt_right">4694.9654</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">ter</td>
-      <td class="gt_row gt_right">4854.1595</td>
-      <td class="gt_row gt_right">4834.6183</td>
-      <td class="gt_row gt_right">4840.7954</td>
-      <td class="gt_row gt_right">4847.1771</td>
+      <td class="gt_row gt_left">Power 4</td>
+      <td class="gt_row gt_right">15173.47</td>
+      <td class="gt_row gt_right">4411.019</td>
+      <td class="gt_row gt_right">-679.4418</td>
+      <td class="gt_row gt_right">1207.614</td>
+      <td class="gt_row gt_right">3867.536</td>
+      <td class="gt_row gt_right">4673.943</td>
+      <td class="gt_row gt_right">4825.547</td>
     </tr>
   </tbody>
   
@@ -5980,12 +6039,12 @@ Dennis Wollersheim
 <h1>Reproducibility</h1>
 <pre class="r"><code>## datetime
 Sys.time()</code></pre>
-<pre><code>[1] &quot;2020-06-24 22:13:28 AEST&quot;</code></pre>
+<pre><code>[1] &quot;2020-06-25 10:21:29 AEST&quot;</code></pre>
 <pre class="r"><code>## repository
 git2r::repository()</code></pre>
 <pre><code>Local:    master /home/dewoller/mydoc/research/scott_groton_maze/R
 Remote:   master @ origin (git@github.com:dewoller/scott_groton.git)
-Head:     [8dfd675] 2020-06-24: for scott</code></pre>
+Head:     [19a5037] 2020-06-25: workflowr::wflow_publish(&quot;analysis/initial.Rmd&quot;)</code></pre>
 <pre class="r"><code>## session info
 sessionInfo()</code></pre>
 <pre><code>R version 4.0.2 (2020-06-22)
@@ -6008,45 +6067,49 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] tidyselect_1.1.0  gt_0.2.0.5        parsnip_0.1.1     caret_6.0-86     
- [5] lattice_0.20-41   janitor_2.0.1     rmarkdown_2.1     forcats_0.5.0    
- [9] dplyr_1.0.0       purrr_0.3.4       readr_1.3.1       tidyr_1.1.0      
-[13] tibble_3.0.1      ggplot2_3.3.0     tidyverse_1.3.0   foreign_0.8-79   
-[17] lubridate_1.7.8   knitr_1.28        stringr_1.4.0     magrittr_1.5     
-[21] workflowr_1.6.2   purrrlyr_0.0.6    drake_7.12.1.9000 dotenv_1.0.2     
-[25] conflicted_1.0.4  nvimcom_0.9-82   
+ [1] tidyselect_1.1.0  testthat_2.3.2    gt_0.2.0.5        parsnip_0.1.1    
+ [5] caret_6.0-86      lattice_0.20-41   janitor_2.0.1     rmarkdown_2.1    
+ [9] forcats_0.5.0     dplyr_1.0.0       purrr_0.3.4       readr_1.3.1      
+[13] tidyr_1.1.0       tibble_3.0.1      ggplot2_3.3.0     tidyverse_1.3.0  
+[17] foreign_0.8-79    lubridate_1.7.8   knitr_1.28        stringr_1.4.0    
+[21] magrittr_1.5      workflowr_1.6.2   purrrlyr_0.0.6    drake_7.12.1.9000
+[25] dotenv_1.0.2      conflicted_1.0.4  nvimcom_0.9-82   
 
 loaded via a namespace (and not attached):
- [1] colorspace_1.4-1     ellipsis_0.3.1       class_7.3-17        
- [4] rprojroot_1.3-2      snakecase_0.11.0     fs_1.4.1            
- [7] rstudioapi_0.11      farver_2.0.3         prodlim_2019.11.13  
-[10] fansi_0.4.1          xml2_1.3.2           codetools_0.2-16    
-[13] splines_4.0.2        jsonlite_1.6.1       pROC_1.16.2         
-[16] broom_0.5.6          dbplyr_1.4.3         compiler_4.0.2      
-[19] httr_1.4.1           backports_1.1.8      assertthat_0.2.1    
-[22] Matrix_1.2-18        cli_2.0.2            later_1.1.0.1       
-[25] htmltools_0.5.0      prettyunits_1.1.1    tools_4.0.2         
-[28] igraph_1.2.5         gtable_0.3.0         glue_1.4.1          
-[31] reshape2_1.4.4       Rcpp_1.0.4.6         cellranger_1.1.0    
-[34] vctrs_0.3.1          nlme_3.1-147         iterators_1.0.12    
-[37] timeDate_3043.102    gower_0.2.1          xfun_0.14           
-[40] rvest_0.3.5          lifecycle_0.2.0      MASS_7.3-51.6       
-[43] scales_1.1.1         ipred_0.9-9          hms_0.5.3           
-[46] promises_1.1.1       parallel_4.0.2       yaml_2.2.1          
-[49] memoise_1.1.0        sass_0.2.0           rpart_4.1-15        
-[52] stringi_1.4.6        foreach_1.5.0        checkmate_2.0.0     
-[55] filelock_1.0.2       lava_1.6.7           storr_1.2.1         
-[58] rlang_0.4.6          pkgconfig_2.0.3      evaluate_0.14       
-[61] recipes_0.1.12       labeling_0.3         plyr_1.8.6          
-[64] R6_2.4.1             generics_0.0.2       base64url_1.4       
-[67] txtq_0.2.0           DBI_1.1.0            mgcv_1.8-31         
-[70] pillar_1.4.4         haven_2.2.0          whisker_0.4         
-[73] withr_2.2.0          survival_3.1-12      nnet_7.3-14         
-[76] modelr_0.1.7         crayon_1.3.4         progress_1.2.2      
-[79] grid_4.0.2           readxl_1.3.1         data.table_1.12.8   
-[82] git2r_0.27.1         ModelMetrics_1.2.2.2 reprex_0.3.0        
-[85] digest_0.6.25        httpuv_1.5.4         stats4_4.0.2        
-[88] munsell_0.5.0       </code></pre>
+  [1] colorspace_1.4-1     ellipsis_0.3.1       class_7.3-17        
+  [4] rprojroot_1.3-2      snakecase_0.11.0     fs_1.4.1            
+  [7] dichromat_2.0-0      rstudioapi_0.11      farver_2.0.3        
+ [10] scico_1.1.0          prodlim_2019.11.13   fansi_0.4.1         
+ [13] xml2_1.3.2           codetools_0.2-16     splines_4.0.2       
+ [16] jsonlite_1.6.1       pROC_1.16.2          broom_0.5.6         
+ [19] cluster_2.1.0        dbplyr_1.4.3         mapproj_1.2.7       
+ [22] compiler_4.0.2       httr_1.4.1           backports_1.1.8     
+ [25] assertthat_0.2.1     Matrix_1.2-18        cli_2.0.2           
+ [28] later_1.1.0.1        htmltools_0.5.0      prettyunits_1.1.1   
+ [31] tools_4.0.2          igraph_1.2.5         gtable_0.3.0        
+ [34] glue_1.4.1           reshape2_1.4.4       maps_3.3.0          
+ [37] Rcpp_1.0.4.6         cellranger_1.1.0     vctrs_0.3.1         
+ [40] nlme_3.1-147         jcolors_0.0.4        iterators_1.0.12    
+ [43] timeDate_3043.102    gower_0.2.1          xfun_0.14           
+ [46] rvest_0.3.5          lifecycle_0.2.0      MASS_7.3-51.6       
+ [49] scales_1.1.1         ipred_0.9-9          hms_0.5.3           
+ [52] promises_1.1.1       parallel_4.0.2       rematch2_2.1.2      
+ [55] prismatic_0.2.0      yaml_2.2.1           memoise_1.1.0       
+ [58] sass_0.2.0           rpart_4.1-15         stringi_1.4.6       
+ [61] paletteer_1.1.0      foreach_1.5.0        checkmate_2.0.0     
+ [64] filelock_1.0.2       lava_1.6.7           palr_0.2.0          
+ [67] storr_1.2.1          pals_1.6             rlang_0.4.6         
+ [70] pkgconfig_2.0.3      evaluate_0.14        recipes_0.1.12      
+ [73] labeling_0.3         plyr_1.8.6           R6_2.4.1            
+ [76] generics_0.0.2       base64url_1.4        txtq_0.2.0          
+ [79] DBI_1.1.0            mgcv_1.8-31          pillar_1.4.4        
+ [82] haven_2.2.0          whisker_0.4          withr_2.2.0         
+ [85] survival_3.1-12      nnet_7.3-14          modelr_0.1.7        
+ [88] crayon_1.3.4         oompaBase_3.2.9      progress_1.2.2      
+ [91] grid_4.0.2           readxl_1.3.1         data.table_1.12.8   
+ [94] git2r_0.27.1         ModelMetrics_1.2.2.2 reprex_0.3.0        
+ [97] digest_0.6.25        httpuv_1.5.4         stats4_4.0.2        
+[100] munsell_0.5.0        viridisLite_0.3.0   </code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -6075,45 +6138,49 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] tidyselect_1.1.0  gt_0.2.0.5        parsnip_0.1.1     caret_6.0-86     
- [5] lattice_0.20-41   janitor_2.0.1     rmarkdown_2.1     forcats_0.5.0    
- [9] dplyr_1.0.0       purrr_0.3.4       readr_1.3.1       tidyr_1.1.0      
-[13] tibble_3.0.1      ggplot2_3.3.0     tidyverse_1.3.0   foreign_0.8-79   
-[17] lubridate_1.7.8   knitr_1.28        stringr_1.4.0     magrittr_1.5     
-[21] workflowr_1.6.2   purrrlyr_0.0.6    drake_7.12.1.9000 dotenv_1.0.2     
-[25] conflicted_1.0.4  nvimcom_0.9-82   
+ [1] tidyselect_1.1.0  testthat_2.3.2    gt_0.2.0.5        parsnip_0.1.1    
+ [5] caret_6.0-86      lattice_0.20-41   janitor_2.0.1     rmarkdown_2.1    
+ [9] forcats_0.5.0     dplyr_1.0.0       purrr_0.3.4       readr_1.3.1      
+[13] tidyr_1.1.0       tibble_3.0.1      ggplot2_3.3.0     tidyverse_1.3.0  
+[17] foreign_0.8-79    lubridate_1.7.8   knitr_1.28        stringr_1.4.0    
+[21] magrittr_1.5      workflowr_1.6.2   purrrlyr_0.0.6    drake_7.12.1.9000
+[25] dotenv_1.0.2      conflicted_1.0.4  nvimcom_0.9-82   
 
 loaded via a namespace (and not attached):
- [1] colorspace_1.4-1     ellipsis_0.3.1       class_7.3-17        
- [4] rprojroot_1.3-2      snakecase_0.11.0     fs_1.4.1            
- [7] rstudioapi_0.11      farver_2.0.3         prodlim_2019.11.13  
-[10] fansi_0.4.1          xml2_1.3.2           codetools_0.2-16    
-[13] splines_4.0.2        jsonlite_1.6.1       pROC_1.16.2         
-[16] broom_0.5.6          dbplyr_1.4.3         compiler_4.0.2      
-[19] httr_1.4.1           backports_1.1.8      assertthat_0.2.1    
-[22] Matrix_1.2-18        cli_2.0.2            later_1.1.0.1       
-[25] htmltools_0.5.0      prettyunits_1.1.1    tools_4.0.2         
-[28] igraph_1.2.5         gtable_0.3.0         glue_1.4.1          
-[31] reshape2_1.4.4       Rcpp_1.0.4.6         cellranger_1.1.0    
-[34] vctrs_0.3.1          nlme_3.1-147         iterators_1.0.12    
-[37] timeDate_3043.102    gower_0.2.1          xfun_0.14           
-[40] rvest_0.3.5          lifecycle_0.2.0      MASS_7.3-51.6       
-[43] scales_1.1.1         ipred_0.9-9          hms_0.5.3           
-[46] promises_1.1.1       parallel_4.0.2       yaml_2.2.1          
-[49] memoise_1.1.0        sass_0.2.0           rpart_4.1-15        
-[52] stringi_1.4.6        foreach_1.5.0        checkmate_2.0.0     
-[55] filelock_1.0.2       lava_1.6.7           storr_1.2.1         
-[58] rlang_0.4.6          pkgconfig_2.0.3      evaluate_0.14       
-[61] recipes_0.1.12       labeling_0.3         plyr_1.8.6          
-[64] R6_2.4.1             generics_0.0.2       base64url_1.4       
-[67] txtq_0.2.0           DBI_1.1.0            mgcv_1.8-31         
-[70] pillar_1.4.4         haven_2.2.0          whisker_0.4         
-[73] withr_2.2.0          survival_3.1-12      nnet_7.3-14         
-[76] modelr_0.1.7         crayon_1.3.4         progress_1.2.2      
-[79] grid_4.0.2           readxl_1.3.1         data.table_1.12.8   
-[82] git2r_0.27.1         ModelMetrics_1.2.2.2 reprex_0.3.0        
-[85] digest_0.6.25        httpuv_1.5.4         stats4_4.0.2        
-[88] munsell_0.5.0       </code></pre>
+  [1] colorspace_1.4-1     ellipsis_0.3.1       class_7.3-17        
+  [4] rprojroot_1.3-2      snakecase_0.11.0     fs_1.4.1            
+  [7] dichromat_2.0-0      rstudioapi_0.11      farver_2.0.3        
+ [10] scico_1.1.0          prodlim_2019.11.13   fansi_0.4.1         
+ [13] xml2_1.3.2           codetools_0.2-16     splines_4.0.2       
+ [16] jsonlite_1.6.1       pROC_1.16.2          broom_0.5.6         
+ [19] cluster_2.1.0        dbplyr_1.4.3         mapproj_1.2.7       
+ [22] compiler_4.0.2       httr_1.4.1           backports_1.1.8     
+ [25] assertthat_0.2.1     Matrix_1.2-18        cli_2.0.2           
+ [28] later_1.1.0.1        htmltools_0.5.0      prettyunits_1.1.1   
+ [31] tools_4.0.2          igraph_1.2.5         gtable_0.3.0        
+ [34] glue_1.4.1           reshape2_1.4.4       maps_3.3.0          
+ [37] Rcpp_1.0.4.6         cellranger_1.1.0     vctrs_0.3.1         
+ [40] nlme_3.1-147         jcolors_0.0.4        iterators_1.0.12    
+ [43] timeDate_3043.102    gower_0.2.1          xfun_0.14           
+ [46] rvest_0.3.5          lifecycle_0.2.0      MASS_7.3-51.6       
+ [49] scales_1.1.1         ipred_0.9-9          hms_0.5.3           
+ [52] promises_1.1.1       parallel_4.0.2       rematch2_2.1.2      
+ [55] prismatic_0.2.0      yaml_2.2.1           memoise_1.1.0       
+ [58] sass_0.2.0           rpart_4.1-15         stringi_1.4.6       
+ [61] paletteer_1.1.0      foreach_1.5.0        checkmate_2.0.0     
+ [64] filelock_1.0.2       lava_1.6.7           palr_0.2.0          
+ [67] storr_1.2.1          pals_1.6             rlang_0.4.6         
+ [70] pkgconfig_2.0.3      evaluate_0.14        recipes_0.1.12      
+ [73] labeling_0.3         plyr_1.8.6           R6_2.4.1            
+ [76] generics_0.0.2       base64url_1.4        txtq_0.2.0          
+ [79] DBI_1.1.0            mgcv_1.8-31          pillar_1.4.4        
+ [82] haven_2.2.0          whisker_0.4          withr_2.2.0         
+ [85] survival_3.1-12      nnet_7.3-14          modelr_0.1.7        
+ [88] crayon_1.3.4         oompaBase_3.2.9      progress_1.2.2      
+ [91] grid_4.0.2           readxl_1.3.1         data.table_1.12.8   
+ [94] git2r_0.27.1         ModelMetrics_1.2.2.2 reprex_0.3.0        
+ [97] digest_0.6.25        httpuv_1.5.4         stats4_4.0.2        
+[100] munsell_0.5.0        viridisLite_0.3.0   </code></pre>
 </div>
 </div>
 
