@@ -3,11 +3,9 @@ title: "Initial Analysis"
 author: "Dennis Wollersheim"
 date: "15.04.2020"
 output:
-  html_document:
-    df_print: paged
+  word_document: default
   pdf_document:
     highlight: zenburn
-  word_document: default
 linkcolor: cyan
 citecolor: grey
 ---
@@ -16,11 +14,14 @@ citecolor: grey
 
 ```{r include=FALSE}
 
-source('lib/functions.R')
-library(purrrlyr )
+source('_drake.R')
+```
+
+
+```{r}
 #install.packages('purrrlyr' )
 
-min_mandndi = 80
+ min_mandndi = 80
 read.spss('data/Groton Maze_v2.sav') %>% 
 { . } -> spss_orig
 
@@ -66,7 +67,9 @@ df_in %>%
 
 prefix='cog_gml'
 
-df_in %>%
+
+ df_in %>%
+     mutate( cohort = age_months_to_cohort( age_corrected )) %>%
   select(cohort, id, starts_with( prefix )) %>%
   pivot_longer( cols=starts_with( prefix ),
                 names_to=c('type','period') ,
