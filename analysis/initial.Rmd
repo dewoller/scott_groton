@@ -11,8 +11,6 @@ linkcolor: cyan
 citecolor: grey
 ---
 
-TEST
-
 \tableofcontents
 
 ```{r include=FALSE}
