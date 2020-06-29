@@ -1,12 +1,14 @@
 ---
-title:           Initial Analysis
-author:          Dennis Wollersheim
-date:            15.04.2020
-linkcolor:       cyan
-citecolor:       grey
+title: "Initial Analysis"
+author: "Dennis Wollersheim"
+date: "15.04.2020"
 output:
+  html_document:
+    df_print: paged
   pdf_document:
-    highlight:   zenburn
+    highlight: zenburn
+linkcolor: cyan
+citecolor: grey
 ---
 
 \tableofcontents
