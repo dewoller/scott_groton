@@ -16,8 +16,11 @@ citecolor: grey
 
 ```{r include=FALSE}
 
-source('lib/functions.R')
-library(purrrlyr )
+source('_drake.R')
+```
+
+
+```{r}
 #install.packages('purrrlyr' )
 
 min_mandndi = 80
@@ -93,7 +96,7 @@ df_in %>%
     group_by( cohort, period) %>%
     summarise( value = mean( value), n = n()) %>%
     ungroup() %>%
-    filter( n > 3) %>%
+    filter( n > 2) %>%
     mutate( cohort_period = cohort + period - 1 ) %>%
     mutate( cohort = as.factor(cohort)) %>%
     ggplot( aes( cohort_period, value, color=cohort   )) +

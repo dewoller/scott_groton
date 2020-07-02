@@ -16,8 +16,11 @@ citecolor: grey
 
 ```{r include=FALSE}
 
-source('lib/functions.R')
-library(purrrlyr )
+source('_drake.R')
+```
+
+
+```{r}
 #install.packages('purrrlyr' )
 
 min_mandndi = 80
