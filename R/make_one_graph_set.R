@@ -18,9 +18,9 @@ make_one_graph_set = function( df1, df_in_long )
 
   df_in_long_filtered %>%
     group_by( cohort, period, cohort_period, cohort_age) %>%
-    summarise( value = mean( value), n = n()) %>%
-    ungroup() %>%
-    mutate( cohort = as.factor(cohort)) %>% 
+    summarise( value = mean( value), n = n(),
+              .groups='drop') %>%
+    mutate( cohort = as.factor(cohort)) %>%
     { . } -> temp
 
   temp %>%
@@ -38,7 +38,8 @@ make_one_graph_set = function( df1, df_in_long )
   df_in_long_filtered %>%
     group_by( cohort_age) %>%
     summarise( m = mean( value ),
-              interval = sd( value) ) %>%
+              interval = sd( value),
+              .groups='drop') %>%
     ungroup() %>%
     mutate( sd_1_sd_u = m + interval ) %>%
     mutate( sd_1_sd_d = m - interval ) %>%
@@ -70,8 +71,8 @@ make_one_graph_set = function( df1, df_in_long )
 
   df_in_long_filtered %>%
     group_by( cohort_age) %>%
-    summarise( value = mean( value), n = n()) %>%
-    ungroup() %>%
+    summarise( value = mean( value), n = n(),
+              .groups='drop') %>%
     ggplot( aes( cohort_age, value)) +
     geom_line() +
     geom_point(aes(size=n)) +

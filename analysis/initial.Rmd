@@ -25,8 +25,10 @@ source('_drake.R')
 ```{r graph_raw, results='asis'}
 
 loadd(df_one_names)
+
 loadd( df_in_long )
 loadd( df_in_long_filtered )
+loadd( df_in_long_filtered_twice )
 
 df_in_long %>%
   distinct( type ) %>%
@@ -37,7 +39,7 @@ df_in_long %>%
 
 ```
 
-# Raw BIC values
+## Raw BIC values
 
 ```{r}
 
@@ -70,7 +72,7 @@ df_in_long_filtered  %>%
 
 ```
 
-# Filtered BIC values
+## Filtered BIC values
 
 ```{r}
 readd(df_model_filtered) %>% 
@@ -85,6 +87,56 @@ readd(df_model_filtered) %>%
                                           ),
              alpha = 0.8
   )
+```
+
+
+
+# Results with all cohorts / periods removed that have N < 3, and outliers >3 standard deviations removed
+
+```{r graph_filtered_twice, results='asis'}
+
+df_in_long_filtered_twice  %>%
+  distinct( type ) %>%
+  mutate( variable = paste0(prefix, type) ) %>%
+  inner_join( df_one_names, by='variable' ) %>%
+  by_row(make_one_graph_set,  df_in_long_filtered_twice) %>%
+  { . } -> dev_null
+
+```
+## Double filtered BIC values
+
+```{r}
+readd(df_model_filtered_twice) %>% 
+  gt() %>%
+  data_color(
+             columns = 2:8,
+             colors = scales::col_numeric(
+                                          palette = paletteer::paletteer_d(
+                                                                           palette = "ggsci::red_material"
+                                                                           ) %>% as.character(),
+                                          domain = NULL
+                                          ),
+             alpha = 0.8
+  )
+```
+
+## Outlier summary
+
+```{r}
+
+readd(df_outliers) %>% 
+  mutate( variable = paste0(prefix, type) ) %>%
+  inner_join( df_one_names, by='variable' ) %>%
+  count(label) %>%
+  mutate( label = str_replace_all(label, 'Groton Maze: | Total','')) %>%
+  gt()  %>%
+  tab_header(
+             title = "Outlier Exclusion Summary",
+             subtitle = "Number of outliers excluded per variable category"
+             ) %>% 
+  cols_label( label='Variable',n='Number Excluded')
+ 
+
 ```
 
 # Reproducibility
