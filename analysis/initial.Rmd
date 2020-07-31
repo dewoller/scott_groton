@@ -26,9 +26,15 @@ source('_drake.R')
 
 loadd(df_one_names)
 
+loadd(df_age_label)
+
 loadd( df_in_long )
 loadd( df_in_long_filtered )
 loadd( df_in_long_filtered_twice )
+
+loadd( df_mlm_model )
+loadd( df_mlm_model_filtered )
+loadd( df_mlm_model_filtered_twice )
 
 df_in_long %>%
   distinct( type ) %>%
@@ -43,18 +49,12 @@ df_in_long %>%
 
 ```{r}
 
-readd(df_model) %>%
-  gt() %>%
-  data_color(
-             columns = 2:8,
-             colors = scales::col_numeric(
-                                          palette = paletteer::paletteer_d(
-                                                                           palette = "ggsci::red_material"
-                                                                           ) %>% as.character(),
-                                          domain = NULL
-                                          ),
-             alpha = 0.8
-  )
+df_mlm_model %>%
+  distinct( target_type ) %>%
+  mutate( variable = paste0(prefix, target_type) ) %>%
+  inner_join( df_one_names, by='variable' ) %>%
+  by_row(display_one_model_set, df_mlm_model) %>%
+  { . } -> dev_null
 
 ```
 
@@ -75,19 +75,16 @@ df_in_long_filtered  %>%
 ## Filtered BIC values
 
 ```{r}
-readd(df_model_filtered) %>% 
-  gt() %>%
-  data_color(
-             columns = 2:8,
-             colors = scales::col_numeric(
-                                          palette = paletteer::paletteer_d(
-                                                                           palette = "ggsci::red_material"
-                                                                           ) %>% as.character(),
-                                          domain = NULL
-                                          ),
-             alpha = 0.8
-  )
+
+df_mlm_model_filtered %>%
+  distinct( target_type ) %>%
+  mutate( variable = paste0(prefix, target_type) ) %>%
+  inner_join( df_one_names, by='variable' ) %>%
+  by_row(display_one_model_set, df_mlm_model_filtered) %>%
+  { . } -> dev_null
+
 ```
+
 
 
 
@@ -106,25 +103,21 @@ df_in_long_filtered_twice  %>%
 ## Double filtered BIC values
 
 ```{r}
-readd(df_model_filtered_twice) %>% 
-  gt() %>%
-  data_color(
-             columns = 2:8,
-             colors = scales::col_numeric(
-                                          palette = paletteer::paletteer_d(
-                                                                           palette = "ggsci::red_material"
-                                                                           ) %>% as.character(),
-                                          domain = NULL
-                                          ),
-             alpha = 0.8
-  )
+
+df_mlm_model_filtered_twice %>%
+  distinct( target_type ) %>%
+  mutate( variable = paste0(prefix, target_type) ) %>%
+  inner_join( df_one_names, by='variable' ) %>%
+  by_row(display_one_model_set, df_mlm_model_filtered_twice) %>%
+  { . } -> dev_null
+
 ```
 
 ## Outlier summary
 
 ```{r}
 
-readd(df_outliers) %>% 
+readd(df_outliers) %>%
   mutate( variable = paste0(prefix, type) ) %>%
   inner_join( df_one_names, by='variable' ) %>%
   count(label) %>%
@@ -133,9 +126,9 @@ readd(df_outliers) %>%
   tab_header(
              title = "Outlier Exclusion Summary",
              subtitle = "Number of outliers excluded per variable category"
-             ) %>% 
+             ) %>%
   cols_label( label='Variable',n='Number Excluded')
- 
+
 
 ```
 
