@@ -1,6 +1,6 @@
 variable_name='dur'
 graph_type='dur'
-label=''
+label='Duration'
 
 make_one_graph_set = function( df1, df_in_long )
 {
@@ -27,7 +27,15 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( aes( cohort_age, value, color=cohort   )) +
     geom_line() +
     geom_point(aes(size=n)) +
+    ylab(label) +
+    scale_size( name   = "N Points", breaks =  1:5*10 ) +
+    scale_color_discrete(name= age_legend_title,
+                        breaks=df_age_label$cohort,
+                        labels=df_age_label$age_label
+    ) +
+    theme(legend.position="bottom") +
     scale_x_continuous("Age", labels = as.character(temp$cohort_age), breaks = temp$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     ggtitle( glue::glue('Average {variable_name} by cohort ')) %>%
@@ -58,11 +66,13 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( ) +
     geom_boxplot(aes( cohort_age, value, group=cohort_age)) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     geom_point( aes( cohort_age, value, color=interval ),
                data= df_in_long_filtered_sd,
                shape=3) +
+    ylab(label) +
     ggtitle( glue::glue('Boxplot for each age group for variable {variable_name}, {label}')) %>%
     { . } -> p
   print(p)
@@ -76,7 +86,10 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( aes( cohort_age, value)) +
     geom_line() +
     geom_point(aes(size=n)) +
+    ylab(label) +
+    scale_size( name   = "N Points", breaks =  1:5*10 ) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     ggtitle( glue::glue('Average overall {variable_name} for each age group')) %>%
@@ -91,8 +104,10 @@ make_one_graph_set = function( df1, df_in_long )
     geom_point() +
     geom_smooth(method = lm , se = TRUE) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+    ylab(label) +
     ggtitle( glue::glue('Curve prediction x^1  for variable {variable_name} for each age group')) %>%
     { . } -> p
   print(p)
@@ -102,7 +117,9 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( aes( cohort_age, value)) +
     geom_point() +
     geom_smooth(method = lm, formula = y~poly(x,2,raw=TRUE) , se = TRUE) +
+    ylab(label) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     ggtitle( glue::glue('Curve prediction x^2  for variable {variable_name} for each age group')) %>%
@@ -114,7 +131,9 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( aes( cohort_age, value)) +
     geom_point() +
     geom_smooth(method = lm, formula = y~poly(x,3,raw=TRUE) , se = TRUE) +
+    ylab(label) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     ggtitle( glue::glue('Curve prediction x^3  for variable {variable_name} for each age group')) %>%
@@ -126,7 +145,9 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( aes( cohort_age, value)) +
     geom_point() +
     geom_smooth(method = lm, formula = y~poly(x,4,raw=TRUE) , se = TRUE) +
+    ylab(label) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     ggtitle( glue::glue('Curve prediction x^4  for variable {variable_name} for each age group')) %>%
@@ -138,7 +159,9 @@ make_one_graph_set = function( df1, df_in_long )
     ggplot( aes( cohort_age, value)) +
     geom_point() +
     geom_smooth(method = lm, formula = y ~ splines::bs(x, 4), se = TRUE) +
+    ylab(label) +
     scale_x_continuous("Age", labels = as.character(df_in_long_filtered$cohort_age), breaks = df_in_long_filtered$cohort_age) +
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
     ggtitle( glue::glue('Curve prediction using bsplines of degree 4  for variable {variable_name} for each age group')) %>%

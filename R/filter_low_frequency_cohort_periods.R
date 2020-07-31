@@ -9,7 +9,7 @@ filter_low_frequency =  function( df_in_long ) {
     { . } -> df_tofilter
 
   df_in_long  %>%
-    anti_join( df_tofilter) %>%
+    anti_join( df_tofilter, by=c('cohort', 'period')) %>%
     { . } -> df_in_long_filtered
 
   df_in_long_filtered

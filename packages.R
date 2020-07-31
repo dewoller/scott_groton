@@ -18,6 +18,9 @@ library(caret)
 library(parsnip)
 library(gt)
 library(testthat)
+library(functional)
+library(lme4)
+#library(glm)
 
 
 conflict_prefer("filter", "dplyr")

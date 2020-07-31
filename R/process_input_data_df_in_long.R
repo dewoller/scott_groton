@@ -13,10 +13,10 @@ process_input_data_df_in_long<- function(df_in)
     mutate( period = as.numeric(period)) %>%
     mutate( cohort_period = cohort + period - 1 ) %>%
     mutate( cohort_age = cohort_period / 2 + 4.5 ) %>%
+    filter( cohort != 1 ) %>%
     { . } -> df_in_long
 
-df_in_long
-
+  df_in_long
 
 }
 
