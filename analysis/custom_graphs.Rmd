@@ -1,0 +1,65 @@
+---
+title: "Initial Analysis"
+author: "Dennis Wollersheim"
+date: "15.04.2020"
+output:
+  workflowr::wflow_html:
+    toc: false
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.width=11, fig.height=8)
+source('_drake.R')
+
+
+```
+
+# Raw results, no filtering
+
+```{r graph_raw, results='asis'}
+
+loadd(df_age_label)
+loadd( df_in_long )
+loadd( df_in_long_filtered )
+loadd( df_in_long_filtered_twice )
+
+
+make_custom_graphs( df_in_long, df_age_label )
+
+```
+
+# Results with all cohorts / periods removed that have N < 3
+
+```{r graph_filtered, results='asis'}
+
+make_custom_graphs( df_in_long_filtered, df_age_label )
+
+```
+
+# Results with all cohorts / periods removed that have N < 3, and outliers >3 standard deviations removed
+
+```{r graph_filtered_twice, results='asis'}
+
+make_custom_graphs( df_in_long_filtered_twice, df_age_label )
+
+```
+
+# Reproducibility
+
+```{r}
+## datetime
+Sys.time()
+
+## repository
+git2r::repository()
+
+## session info
+sessionInfo()
+```
+
+
+
+
+
+
