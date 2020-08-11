@@ -8,7 +8,7 @@
 min_mandndi = 80
 prefix='cog_gml'  # all relevant variables start with this
 
-age_legend_title = "Cohort at baseline (in 6 monthly intervals)"
+age_legend_title = "Cohort at baseline\n(in 6 monthly intervals)"
 
 the_plan <-
   drake_plan(
@@ -40,10 +40,18 @@ the_plan <-
 
              # generate reports
              graphs = target(
+                             command = {
+                               knitr_in("R/make_one_graph_set.R")
+                               workflowr::wflow_build( knitr_in("analysis/initial.Rmd"))
+                               file_out("docs/initial.html")
+                             }
+             ),
+             # generate custom_graphs
+             custom_graphs = target(
                                   command = {
-                                    knitr_in("R/make_one_graph_set.R")
-                                    workflowr::wflow_build( knitr_in("analysis/initial.Rmd"))
-                                    file_out("docs/initial.html")
+                                    knitr_in("R/make_custom_graphs.R")
+                                    workflowr::wflow_build( knitr_in("analysis/custom_graphs.Rmd"))
+                                    file_out("docs/custom_graphs.html")
                                   }
              )
 )

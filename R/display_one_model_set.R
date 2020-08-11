@@ -23,4 +23,10 @@ display_one_model_set = function( df1, df_mlm_model )
     do.call(Curry(anova, .[[1]]), .) %>%
     print()
 
+  df_mlm_model %>%
+    filter( target_type == graph_target_type ) %>%
+    pluck(2,1, 'rv') %>%
+    msummary()
+
+
 }

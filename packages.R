@@ -20,7 +20,13 @@ library(gt)
 library(testthat)
 library(functional)
 library(lme4)
-#library(glm)
+library(modelsummary)
+
+library(ggplot2)
+library(gridExtra)
+library(gtable)
+library(grid)
+library(cowplot)
 
 
 conflict_prefer("filter", "dplyr")

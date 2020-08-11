@@ -34,7 +34,16 @@ model5 <- lmer(value ~ cohort_age + (1|id) + ( 0+cohort_age | id), data=df_dur)
 summary(model5)
 anova(model1, model2, model3, model4, model5)
 
-summary(model)
+library(modelsummary)
+library(broom.mixed)
+
+
+tidy(model1)
+
+
+msummary(tidy(model1))
+
+
 anova(model)
 
 
@@ -235,5 +244,30 @@ graph1 = function( graph_type ) {
 
 
 
+set.seed(1)
+n <- 10   # experiment size
+id <- seq(from=1, to=n, by=1)   # experiment number
+x1 <- rnorm(n=n, mean = 1, sd = 1)
+x2 <- rnorm(n=n, mean = 10, sd = 1)
+x3 <- rnorm(n=n, mean = 10, sd = 10)
 
+df <- cbind(id, x1, x2, x3)
 
+df <- rbind(df, df, df)   # triplicate
+
+df <- transform(df, rep=c(rep("A",times=n), rep("B",times=n), rep("C",times=n)), 
+                y = rnorm(n=3*n, mean=5, sd=5))
+
+df <- df[order(df[,"id"]),]
+
+df
+
+library(lme4)
+fit2 <- lmer(y~x1+x2+x3+(1|rep), data=df)   # a mixed-effect linear regression
+msummary(list(fit2, fit2))
+msummary(list(model1, model1))
+
+citation('lme4')
+
+fit <- lm(y~x1+x2+x3, data=df)   # a linear regression
+summary(fit)

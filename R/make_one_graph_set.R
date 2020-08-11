@@ -2,7 +2,7 @@ variable_name='dur'
 graph_type='dur'
 label='Duration'
 
-make_one_graph_set = function( df1, df_in_long )
+make_one_graph_set = function( df1, df_in_long, df_age_label )
 {
 
   graph_type = df1$type
