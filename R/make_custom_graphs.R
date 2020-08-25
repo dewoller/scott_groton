@@ -5,7 +5,7 @@ make_custom_graphs = function( df_in_long, df_age_label ) {
                         df_age_label,
                         graph_type = 'dur',
                         max_y=400,
-                        ylabel = "Duration Total (Seconds)" )
+                        ylabel = "Response Duration (Seconds)" )
 
 
   make_graph_set_x2(df_in_long ,
