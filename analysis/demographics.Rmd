@@ -20,6 +20,7 @@ source('_drake.R')
 ```{r graph_raw, include=FALSE}
 
 loadd( df_in_long_filtered )
+loadd( df_in)
 
 
 ```
@@ -66,6 +67,26 @@ df_in_long_filtered  %>%
   summarise( mean_age = mean(cohort_age), sd_age = sd(cohort_age), number_in_cohort=n(), .groups='drop') %>%
   gt()
 
+
+
+```
+
+
+## Number of children in each age group at baseline, age (inc Ms and SDs).
+where age is age_corrected/12 and age_group is round(age), e.g.
+6 years old group includes ages 5.5-6.5
+
+
+```{r tables_ages}
+
+df_in %>%
+  mutate( id = str_trim(id)) %>%
+  inner_join( df_in_long_filtered  %>% distinct( id) ) %>%
+  select(age_corrected) %>%
+  mutate( age = age_corrected / 12, age_group=round(age)) %>%
+  group_by( age_group) %>%
+  summarise( mean_age = mean(age), sd_age= sd(age), .groups='drop') %>%
+  gt()
 
 
 ```
