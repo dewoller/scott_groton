@@ -1,7 +1,7 @@
 ---
-title: "Initial Analysis"
-author: "Dennis Wollersheim"
-date: "15.04.2020"
+title: "Demographics"
+author: "Dennis Wollersheim and Scott Groton"
+date: "2020-09-10"
 output:
   workflowr::wflow_html:
     toc: false
@@ -15,21 +15,17 @@ source('_drake.R')
 
 ```
 
-# Raw results, no filtering
+# Results for data excluding cohorts where n<=3
 
-```{r graph_raw, results='asis'}
+```{r graph_raw, include=FALSE}
 
-loadd(df_age_label)
-loadd( df_in_long )
 loadd( df_in_long_filtered )
-loadd( df_in_long_filtered_twice )
-
 
 
 ```
 
 
-Total number of children across the whole sample
+## Total number of children across the whole sample
 
 ```{r tables}
 
@@ -40,7 +36,7 @@ Total number of children across the whole sample
 
 ```
 
-Median and SD age at start (inc Ms and SDs)
+## Median and SD age at start (inc Ms and SDs)
 
 
 ```{r tables2}
@@ -51,13 +47,13 @@ df_in_long_filtered  %>%
   filter( cohort_age == min( cohort_age)) %>%
   distinct() %>%
   ungroup() %>%
-  summarise( mean = mean(cohort_age), sd = sd(cohort_age)) %>%
+  summarise( mean_age = mean(cohort_age), sd_age = sd(cohort_age),.groups='drop') %>%
   gt()
 
 ```
 
 
-Number of children in each cohort at baseline, age (inc Ms and SDs). 
+## Number of children in each cohort at baseline, age (inc Ms and SDs).
 
 ```{r tables3}
 
@@ -67,7 +63,7 @@ df_in_long_filtered  %>%
   filter( cohort_age == min( cohort_age)) %>%
   distinct() %>%
   group_by(cohort) %>%
-  summarise( mean = mean(cohort_age), sd = sd(cohort_age), n=n()) %>%
+  summarise( mean_age = mean(cohort_age), sd_age = sd(cohort_age), number_in_cohort=n(), .groups='drop') %>%
   gt()
 
 
