@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Dennis Wollersheim" />
+<meta name="author" content="Dennis Wollersheim and Scott Groton" />
 
+<meta name="date" content="2020-09-10" />
 
-<title>Initial Analysis</title>
+<title>Demographics</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -301,9 +302,9 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Initial Analysis</h1>
-<h4 class="author">Dennis Wollersheim</h4>
-<h4 class="date">15.04.2020</h4>
+<h1 class="title toc-ignore">Demographics</h1>
+<h4 class="author">Dennis Wollersheim and Scott Groton</h4>
+<h4 class="date">2020-09-10</h4>
 
 </div>
 
@@ -419,16 +420,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree8dcee44600bbb9447d1eeeda3fb8e9aa744e074ftargetblank8dcee44a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/8dcee44600bbb9447d1eeeda3fb8e9aa744e074f" target="_blank">8dcee44</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontreeded2302c253961d7170debe64693041beced0d70targetblankded2302a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dewoller/scott_groton/tree/ded2302c253961d7170debe64693041beced0d70" target="_blank">ded2302</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontree8dcee44600bbb9447d1eeeda3fb8e9aa744e074ftargetblank8dcee44a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdewollerscottgrotontreeded2302c253961d7170debe64693041beced0d70targetblankded2302a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/8dcee44600bbb9447d1eeeda3fb8e9aa744e074f" target="_blank">8dcee44</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dewoller/scott_groton/tree/ded2302c253961d7170debe64693041beced0d70" target="_blank">ded2302</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -489,6 +490,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/dewoller/scott_groton/blob/ded2302c253961d7170debe64693041beced0d70/analysis/demographics.Rmd" target="_blank">ded2302</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-09-10
+</td>
+<td>
+workflowr::wflow_publish(“analysis/demographics.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dewoller/scott_groton/1e46ebb53bc90f3a64afa688d579e8db7f03c7c2/docs/demographics.html" target="_blank">1e46ebb</a>
+</td>
+<td>
+Dennis Wollersheim
+</td>
+<td>
+2020-09-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/dewoller/scott_groton/blob/8dcee44600bbb9447d1eeeda3fb8e9aa744e074f/analysis/demographics.Rmd" target="_blank">8dcee44</a>
 </td>
 <td>
@@ -508,13 +543,10 @@ workflowr::wflow_publish(“analysis/demographics.Rmd”)
 </div>
 </div>
 </div>
-<div id="raw-results-no-filtering" class="section level1">
-<h1>Raw results, no filtering</h1>
-<pre class="r"><code>loadd(df_age_label)
-loadd( df_in_long )
-loadd( df_in_long_filtered )
-loadd( df_in_long_filtered_twice )</code></pre>
-<p>Total number of children across the whole sample</p>
+<div id="results-for-data-excluding-cohorts-where-n3" class="section level1">
+<h1>Results for data excluding cohorts where n&lt;=3</h1>
+<div id="total-number-of-children-across-the-whole-sample" class="section level2">
+<h2>Total number of children across the whole sample</h2>
 <pre class="r"><code> df_in_long_filtered  %&gt;%
    distinct(id) %&gt;%
    count() %&gt;%
@@ -870,14 +902,16 @@ loadd( df_in_long_filtered_twice )</code></pre>
   
   
 </table></div>
-<p>Median and SD age at start (inc Ms and SDs)</p>
+</div>
+<div id="median-and-sd-age-at-start-inc-ms-and-sds" class="section level2">
+<h2>Median and SD age at start (inc Ms and SDs)</h2>
 <pre class="r"><code>df_in_long_filtered  %&gt;%
   select(id, cohort_age) %&gt;%
   group_by(id) %&gt;%
   filter( cohort_age == min( cohort_age)) %&gt;%
   distinct() %&gt;%
   ungroup() %&gt;%
-  summarise( mean = mean(cohort_age), sd = sd(cohort_age)) %&gt;%
+  summarise( mean_age = mean(cohort_age), sd_age = sd(cohort_age),.groups=&#39;drop&#39;) %&gt;%
   gt()</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
@@ -1219,8 +1253,8 @@ loadd( df_in_long_filtered_twice )</code></pre>
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mean</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">sd</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mean_age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">sd_age</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1232,16 +1266,17 @@ loadd( df_in_long_filtered_twice )</code></pre>
   
   
 </table></div>
-<p>Number of children in each cohort at baseline, age (inc Ms and SDs).</p>
+</div>
+<div id="number-of-children-in-each-cohort-at-baseline-age-inc-ms-and-sds." class="section level2">
+<h2>Number of children in each cohort at baseline, age (inc Ms and SDs).</h2>
 <pre class="r"><code>df_in_long_filtered  %&gt;%
   select(cohort, id, cohort_age) %&gt;%
   group_by(id) %&gt;%
   filter( cohort_age == min( cohort_age)) %&gt;%
   distinct() %&gt;%
   group_by(cohort) %&gt;%
-  summarise( mean = mean(cohort_age), sd = sd(cohort_age), n=n()) %&gt;%
+  summarise( mean_age = mean(cohort_age), sd_age = sd(cohort_age), number_in_cohort=n(), .groups=&#39;drop&#39;) %&gt;%
   gt()</code></pre>
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -1583,9 +1618,9 @@ loadd( df_in_long_filtered_twice )</code></pre>
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cohort</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mean</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">sd</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">n</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mean_age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">sd_age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">number_in_cohort</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1737,6 +1772,7 @@ loaded via a namespace (and not attached):
 [79] readxl_1.3.1         data.table_1.13.0    git2r_0.27.1        
 [82] ModelMetrics_1.2.2.2 reprex_0.3.0         digest_0.6.25       
 [85] httpuv_1.5.4         stats4_4.0.2         munsell_0.5.0       </code></pre>
+</div>
 </div>
 </div>
 
