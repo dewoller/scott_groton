@@ -1,0 +1,76 @@
+---
+title: "Initial Analysis"
+author: "Dennis Wollersheim"
+date: "15.04.2020"
+output:
+  workflowr::wflow_html:
+    toc: false
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.width=11, fig.height=8)
+source('_drake.R')
+
+
+```
+
+# Raw results, no filtering
+
+```{r graph_raw, results='asis'}
+
+loadd(df_age_label)
+loadd( df_in_long )
+loadd( df_in_long_filtered )
+loadd( df_in_long_filtered_twice )
+
+
+
+```
+
+
+Total number of children across the whole sample
+
+```{r tables}
+
+ df_in_long_filtered  %>%
+   distinct(id) %>%
+   count() %>%
+   gt()
+
+```
+
+Median and SD age at start (inc Ms and SDs)
+
+
+```{r tables2}
+
+df_in_long_filtered  %>%
+  select(id, cohort_age) %>%
+  group_by(id) %>%
+  filter( cohort_age == min( cohort_age)) %>%
+  distinct() %>%
+  ungroup() %>%
+  summarise( mean = mean(cohort_age), sd = sd(cohort_age)) %>%
+  gt()
+
+```
+
+
+Number of children in each cohort at baseline, age (inc Ms and SDs). 
+
+```{r tables3}
+
+df_in_long_filtered  %>%
+  select(cohort, id, cohort_age) %>%
+  group_by(id) %>%
+  filter( cohort_age == min( cohort_age)) %>%
+  distinct() %>%
+  group_by(cohort) %>%
+  summarise( mean = mean(cohort_age), sd = sd(cohort_age), n=n()) %>%
+  gt()
+
+
+
+```
+
