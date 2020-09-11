@@ -88,6 +88,18 @@ df_in %>%
   summarise( mean_age = mean(age), sd_age= sd(age), .groups='drop') %>%
   gt()
 
+df_in %>%
+  mutate( id = str_trim(id)) %>%
+  inner_join( df_in_long_filtered  %>% distinct( id) ) %>%
+  select(age_corrected, sex) %>%
+  mutate( age = age_corrected / 12, age_group=round(age)) %>%
+  group_by( age_group, sex) %>%
+  summarise( mean_age = mean(age), sd_age= sd(age), .groups='drop') %>%
+  pivot_wider(id_cols=age_group, 
+              values_from=c(mean_age, sd_age), 
+              names_from=sex) %>%
+  gt()
+
 
 ```
 
