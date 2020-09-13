@@ -1,15 +1,15 @@
-source('lib/functions.R')
+source('_drake.R')
 
 
 min_mandndi = 80
 read.spss('data/Groton Maze_v2.sav') %>%
-  as_tibble() %>% 
+  as_tibble() %>%
   janitor::clean_names() %>%
   filter( !is.na(participant_no)) %>%
   filter( mandndi > min_mandndi) %>%
   { . } -> df_in
 
-df_in %>% 
+df_in %>%
   count(mandndi) %>%
   filter( is.na( mandndi))
 
@@ -29,17 +29,17 @@ df_in %>%
 df_in %>%
   select(ends_with('t2')) %>%
   rename_all( str_replace, '_t2','') %>%
-  names() %>% 
+  names() %>%
   { . } -> t1_names
 
 t1_names %>%
-  str_replace('$', '_t1') %>% 
+  str_replace('$', '_t1') %>%
   { . } -> t1_names_new
 
 
 df_in %>%
   rename_all( str_replace, '_t1','') %>%
-  rename_at( vars( t1_names), ~t1_names_new) %>% 
+  rename_at( vars( t1_names), ~t1_names_new) %>%
   { . } -> df_in
 
 #t1_names %>% clipr::write_clip()
@@ -54,7 +54,7 @@ Total errors = CogGMLTER
 Rule break errors = CogGMLRER
 Duration? = CogGMLDUR
 
-df_in %>% 
+df_in %>%
   select(cohort, id, starts_with( prefix )) %>%
   pivot_longer( cols=starts_with( 'cog_gml' ),
                 names_to=c('type','period') ,
@@ -65,7 +65,7 @@ df_in %>%
   mutate( period = as.numeric(period)) %>%
   { . } -> df_in_long
 
-df_in_long %>% 
+df_in_long %>%
   distinct( type ) %>%
   map( type, graph1 )
 
@@ -79,34 +79,34 @@ graph1 = function( graph_type ) {
     group_by( cohort, period) %>%
     summarise( value = mean( value), n = n()) %>%
     ungroup() %>%
-    mutate( cohort_period = cohort + period - 1 ) %>% 
+    mutate( cohort_period = cohort + period - 1 ) %>%
     mutate( cohort = as.factor(cohort)) %>%
     ggplot( aes( cohort_period, value, color=cohort   )) +
     geom_line() +
-    geom_point(aes(size=n)) + 
-    ggtitle( paste('Average', type, 'by cohort ')) %>% 
+    geom_point(aes(size=n)) +
+    ggtitle( paste('Average', type, 'by cohort ')) %>%
     { . } -> p
   print(p)
 
   df_in_long %>%
     filter( type == graph_type ) %>%
-    mutate( cohort_period = cohort + period - 1 ) %>% 
+    mutate( cohort_period = cohort + period - 1 ) %>%
     group_by( cohort_period) %>%
     summarise( value = mean( value), n = n()) %>%
     ungroup() %>%
     ggplot( aes( cohort_period, value)) +
     geom_line() +
-    geom_point(aes(size=n)) + 
-    ggtitle( paste('Average', prefix, '')) %>% 
+    geom_point(aes(size=n)) +
+    ggtitle( paste('Average', prefix, '')) %>%
     { . } -> p
   print(p)
 
   df_in_long %>%
     filter( type == graph_type ) %>%
-    mutate( cohort_period = as.factor(cohort + period - 1 )) %>% 
+    mutate( cohort_period = as.factor(cohort + period - 1 )) %>%
     ggplot( aes( cohort_period, value)) +
     geom_boxplot() +
-    ggtitle( paste('Average', type, '')) %>% 
+    ggtitle( paste('Average', type, '')) %>%
     { . } -> p
   print(p)
 
@@ -114,7 +114,7 @@ graph1 = function( graph_type ) {
 
 
 
-  
+
 
 
 
