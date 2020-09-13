@@ -85,7 +85,7 @@ df_in %>%
   select(age_corrected) %>%
   mutate( age = age_corrected / 12, age_group=round(age)) %>%
   group_by( age_group) %>%
-  summarise( mean_age = mean(age), sd_age= sd(age), .groups='drop') %>%
+  summarise( mean_age = mean(age), sd_age= sd(age), n=n(), .groups='drop') %>%
   gt()
 
 df_in %>%
@@ -94,9 +94,37 @@ df_in %>%
   select(age_corrected, sex) %>%
   mutate( age = age_corrected / 12, age_group=round(age)) %>%
   group_by( age_group, sex) %>%
-  summarise( mean_age = mean(age), sd_age= sd(age), .groups='drop') %>%
-  pivot_wider(id_cols=age_group, 
-              values_from=c(mean_age, sd_age), 
+  summarise( mean_age = mean(age), sd_age= sd(age), n = n(),  .groups='drop') %>%
+  pivot_wider(id_cols=age_group,
+              values_from=c(mean_age, sd_age, n),
+              names_from=sex) %>%
+  gt()
+
+
+```
+
+
+## Number of children in each age group at baseline, age (inc Ms and SDs) (including ALL participants unfiltered)
+
+
+```{r tables_ages_unfiltered}
+
+df_in %>%
+  mutate( id = str_trim(id)) %>%
+  select(age_corrected) %>%
+  mutate( age = age_corrected / 12, age_group=round(age)) %>%
+  group_by( age_group) %>%
+  summarise( mean_age = mean(age), sd_age= sd(age), n=n(), .groups='drop') %>%
+  gt()
+
+df_in %>%
+  mutate( id = str_trim(id)) %>%
+  select(age_corrected, sex) %>%
+  mutate( age = age_corrected / 12, age_group=round(age)) %>%
+  group_by( age_group, sex) %>%
+  summarise( mean_age = mean(age), sd_age= sd(age), n = n(),  .groups='drop') %>%
+  pivot_wider(id_cols=age_group,
+              values_from=c(mean_age, sd_age, n),
               names_from=sex) %>%
   gt()
 
